@@ -4,7 +4,7 @@ using namespace std;
 #include "EmpresaMenu.h"
 
 EmpresaMenu::EmpresaMenu(){
-  _cantidadOpciones = 4;
+  _cantidadOpciones = 6;
 }
 
 void EmpresaMenu::mostrarOpciones(){
@@ -13,6 +13,9 @@ void EmpresaMenu::mostrarOpciones(){
   cout << "2 - MOSTRAR" << endl;
   cout << "3 - ACTUALIZAR" << endl;
   cout << "4 - ELIMINAR" << endl;
+  cout << "--------------------" << endl;
+  cout << "5 - MOSTRAR POR NOMBRE COMERCIAL A-Z" << endl;
+  cout << "6 - MOSTRAR POR NOMBRE COMERCIAL Z-A" << endl;
   cout << "---------------------------------" << endl;
   cout << "0 - SALIR" << endl;
   cout << "--------------------"<<endl;
@@ -31,6 +34,12 @@ void EmpresaMenu::ejecutarOpcion(int opcion){
   break;
   case 4:
     _empresaManager.eliminar();
+  break;
+  case 5:
+    _empresaManager.mostrarNombreComercialAZ();
+  break;
+  case 6:
+    _empresaManager.mostrarNombreComercialZA();
   break;
   }
 }

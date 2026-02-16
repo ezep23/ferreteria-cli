@@ -27,6 +27,8 @@ class VentaManager
     void obtenerNumeroProductosVendidosCategoria(int idCat);
     void ventasPorEmpleado();
 
+    int obtenerNumeroProductosVendidosCliente(int idCliente);
+
     void mostrar();
     void mostrar(int id);
 

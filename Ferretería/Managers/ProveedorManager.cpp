@@ -223,6 +223,156 @@ void ProveedorManager::actualizar(){
 
 }
 
+void ProveedorManager::mostrarNombresAZ() {
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay proveedores registrados." << endl;
+        return;
+    }
+
+    Proveedor *vProveedor = new Proveedor[cantidad];
+    _repo.leerTodos(vProveedor, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProveedor[j].getNombre() < vProveedor[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Proveedor temp = vProveedor[i];
+            vProveedor[i] = vProveedor[j_min];
+            vProveedor[j_min] = temp;
+        }
+    }
+
+    cout << "PROVEEDORES POR NOMBRE (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vProveedor[x].getEstado()) {
+            mostrarLista(vProveedor[x]);
+        }
+    }
+
+    delete[] vProveedor;
+}
+void ProveedorManager::mostrarNombresZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay proveedores registrados." << endl;
+        return;
+    }
+
+    Proveedor *vProveedor = new Proveedor[cantidad];
+    _repo.leerTodos(vProveedor, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProveedor[j].getNombre() < vProveedor[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Proveedor temp = vProveedor[i];
+            vProveedor[i] = vProveedor[j_min];
+            vProveedor[j_min] = temp;
+        }
+    }
+
+    cout << "PROVEEDORES POR NOMBRE (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vProveedor[x].getEstado()) {
+            mostrarLista(vProveedor[x]);
+        }
+    }
+
+    delete[] vProveedor;
+}
+void ProveedorManager::mostrarApellidosAZ(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay proveedores registrados." << endl;
+        return;
+    }
+
+    Proveedor *vProveedor = new Proveedor[cantidad];
+    _repo.leerTodos(vProveedor, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProveedor[j].getApellido() < vProveedor[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Proveedor temp = vProveedor[i];
+            vProveedor[i] = vProveedor[j_min];
+            vProveedor[j_min] = temp;
+        }
+    }
+
+    cout << "PROVEEDORES POR APELLIDO (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vProveedor[x].getEstado()) {
+            mostrarLista(vProveedor[x]);
+        }
+    }
+
+    delete[] vProveedor;
+}
+void ProveedorManager::mostrarApellidosZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay proveedores registrados." << endl;
+        return;
+    }
+
+    Proveedor *vProveedor = new Proveedor[cantidad];
+    _repo.leerTodos(vProveedor, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProveedor[j].getApellido() < vProveedor[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Proveedor temp = vProveedor[i];
+            vProveedor[i] = vProveedor[j_min];
+            vProveedor[j_min] = temp;
+        }
+    }
+
+    cout << "PROVEEDORES POR APELLIDO (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vProveedor[x].getEstado()) {
+            mostrarLista(vProveedor[x]);
+        }
+    }
+
+    delete[] vProveedor;
+}
+
+
 void ProveedorManager::mostrarLista(const Proveedor &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "ID Empresa: " << reg.getIdEmpresa() << endl;

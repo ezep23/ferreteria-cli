@@ -12,9 +12,17 @@ class ProveedorManager{
     void eliminar();
     void actualizar();
 
+    void mostrarNombresAZ();
+    void mostrarNombresZA();
+    void mostrarApellidosAZ();
+    void mostrarApellidosZA();
+    void mostrarNombreComercialAZ();
+    void mostrarNombreComercialZA();
+
     bool existeProveedor(int id);
     int obtenerNumeroProximoID();
 
+    void mostrar(int idEmpresa);
   protected:
     void mostrarLista(const Proveedor &reg);
   private:

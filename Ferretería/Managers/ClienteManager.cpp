@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 
 #include "ClienteManager.h"
 #include "../Entidades/Cliente.h"
@@ -16,6 +17,7 @@ ClienteManager::ClienteManager(){
 void ClienteManager::cargar(){
   int id;
   string nombre;
+  string apellido;
   string dni;
 
   id = _repo.getNuevoID();
@@ -39,7 +41,10 @@ void ClienteManager::cargar(){
   cout << "Ingrese nombre: ";
   nombre = cargarCadena();
 
-  if(_repo.guardar(Cliente(id, nombre, dni))){
+  cout << "Ingrese apellido: ";
+  apellido = cargarCadena();
+
+  if(_repo.guardar(Cliente(id, nombre, apellido, dni))){
     cout << "Se agrego correctamente" << endl;
   }
   else{
@@ -95,7 +100,8 @@ void ClienteManager::actualizar(){
   system("cls");
   cout << "Que desea actualizar?" << endl;
   cout << " 1 - NOMBRE" << endl;
-  cout << " 2 - DNI" << endl;
+  cout << " 2 - APELLIDO" << endl;
+  cout << " 3 - DNI" << endl;
   cout << " Opcion: ";
   cin >> opc;
 
@@ -117,6 +123,16 @@ void ClienteManager::actualizar(){
 
      }
      case 2:{
+        string apellido;
+        apellido = cargarCadena();
+
+        reg.setApellido(apellido);
+        _repo.guardar(pos, reg);
+
+        cout << "APELLIDO ACTUALIZADO" << endl;
+        return;
+     }
+     case 3:{
         string dni;
         dni = cargarCadena();
 
@@ -140,7 +156,6 @@ void ClienteManager::actualizar(){
 
 }
 
-
 bool ClienteManager::existeRegistro(int id){
    int pos = _repo.buscarID(id);
 
@@ -156,15 +171,165 @@ bool ClienteManager::existeRegistro(int id){
    return false;
 }
 
+void ClienteManager::mostrarNombresAZ() {
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay clientes registrados." << endl;
+        return;
+    }
+
+    Cliente *vCliente = new Cliente[cantidad];
+    _repo.leerTodos(vCliente, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vCliente[j].getNombre() < vCliente[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Cliente temp = vCliente[i];
+            vCliente[i] = vCliente[j_min];
+            vCliente[j_min] = temp;
+        }
+    }
+
+    cout << "CLIENTES POR NOMBRE (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vCliente[x].getEstado()) {
+            mostrarLista(vCliente[x]);
+        }
+    }
+
+    delete[] vCliente;
+}
+void ClienteManager::mostrarNombresZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay clientes registrados." << endl;
+        return;
+    }
+
+    Cliente *vCliente = new Cliente[cantidad];
+    _repo.leerTodos(vCliente, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vCliente[j].getNombre() < vCliente[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Cliente temp = vCliente[i];
+            vCliente[i] = vCliente[j_min];
+            vCliente[j_min] = temp;
+        }
+    }
+
+    cout << "CLIENTES POR NOMBRE (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vCliente[x].getEstado()) {
+            mostrarLista(vCliente[x]);
+        }
+    }
+
+    delete[] vCliente;
+}
+void ClienteManager::mostrarApellidosAZ(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay clientes registrados." << endl;
+        return;
+    }
+
+    Cliente *vCliente = new Cliente[cantidad];
+    _repo.leerTodos(vCliente, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vCliente[j].getApellido() < vCliente[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Cliente temp = vCliente[i];
+            vCliente[i] = vCliente[j_min];
+            vCliente[j_min] = temp;
+        }
+    }
+
+    cout << "CLIENTES POR APELLIDO (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vCliente[x].getEstado()) {
+            mostrarLista(vCliente[x]);
+        }
+    }
+
+    delete[] vCliente;
+}
+void ClienteManager::mostrarApellidosZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay clientes registrados." << endl;
+        return;
+    }
+
+    Cliente *vCliente = new Cliente[cantidad];
+    _repo.leerTodos(vCliente, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vCliente[j].getApellido() < vCliente[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Cliente temp = vCliente[i];
+            vCliente[i] = vCliente[j_min];
+            vCliente[j_min] = temp;
+        }
+    }
+
+    cout << "CLIENTES POR APELLIDO (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vCliente[x].getEstado()) {
+            mostrarLista(vCliente[x]);
+        }
+    }
+
+    delete[] vCliente;
+}
+
 void ClienteManager::mostrar(int id){
     int pos = _repo.buscarID(id);
-    cout << "Cliente asignado: " << _repo.leer(pos).getNombre() << " - " << _repo.leer(pos).getDni() << endl;
+    cout << "Cliente asignado: " << _repo.leer(pos).getNombre() << " " << _repo.leer(pos).getNombre() << " - " << _repo.leer(pos).getDni() << endl;
 }
 
 void ClienteManager::mostrarLista(const Cliente &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "DNI: " << reg.getDni() << endl;
   cout << "Nombre: "<< reg.getNombre() << endl;
+  cout << "Apellido " << reg.getApellido() << endl;
   cout << "------------" <<endl;
 }
 

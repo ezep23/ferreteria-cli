@@ -1,7 +1,6 @@
 #pragma once
 #include "../Archivos/ClienteArchivo.h"
 
-
 class ClienteManager{
   public:
     ClienteManager();
@@ -12,7 +11,13 @@ class ClienteManager{
     void eliminar();
     void actualizar();
 
+    void mostrarNombresAZ();
+    void mostrarNombresZA();
+    void mostrarApellidosAZ();
+    void mostrarApellidosZA();
+
     bool existeRegistro(int id);
+    void mostrarClientesMasCompras();
 
   protected:
     void mostrarLista(const Cliente &reg);

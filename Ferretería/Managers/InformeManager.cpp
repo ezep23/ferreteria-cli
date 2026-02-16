@@ -130,6 +130,7 @@ void InformeManager::ventasPorEmpleado(){
 
 void InformeManager::comprasPorEmpleado(){
     _compraManager.comprasPorEmpleado();
+}
 
 void InformeManager::listarBajoStock(){
     _almacenManager.listarBajoStock();

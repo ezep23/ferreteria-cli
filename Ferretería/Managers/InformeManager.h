@@ -3,6 +3,8 @@
 #include "AlmacenManager.h"
 #include "CategoriaManager.h"
 #include "CompraManager.h"
+#include "DetalleVentaManager.h"
+#include "ClienteManager.h"
 
 class InformeManager{
   public:
@@ -21,6 +23,8 @@ class InformeManager{
     void listarBajoStock();
 
   private:
+    DetalleVentaManager _detalleManager;
+    ClienteManager _clienteManager;
     VentaManager _ventaManager;
     CompraManager _compraManager;
     AlmacenManager _almacenManager;

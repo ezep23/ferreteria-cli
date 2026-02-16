@@ -341,6 +341,229 @@ void AlmacenManager::listarBajoStock(){
   return;
 }
 
+void AlmacenManager::mostrarNombresAZ(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getNombre() < vProducto[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR NOMBRE (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+void AlmacenManager::mostrarNombresZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getNombre() < vProducto[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR NOMBRE (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+void AlmacenManager::mostrarPreciosAltoBajo(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getPrecio() < vProducto[j_min].getPrecio()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR PRECIO (MAYOR A MENOR): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+void AlmacenManager::mostrarPreciosBajoAlto(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getPrecio() < vProducto[j_min].getPrecio()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR PRECIO (MENOR A MAYOR): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+void AlmacenManager::mostrarStockAltoBajo(){
+     int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getStock() < vProducto[j_min].getStock()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR STOCK (MAYOR A MENOR): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+void AlmacenManager::mostrarStockBajoAlto(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+
+    Producto *vProducto = new Producto[cantidad];
+    _repo.leerTodos(vProducto, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vProducto[j].getStock() < vProducto[j_min].getStock()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Producto temp = vProducto[i];
+            vProducto[i] = vProducto[j_min];
+            vProducto[j_min] = temp;
+        }
+    }
+
+    cout << "PRODUCTOS POR STOCK (MENOR A MAYOR): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vProducto[x].getEstado()) {
+            mostrarLista(vProducto[x]);
+        }
+    }
+
+    delete[] vProducto;
+}
+
 void AlmacenManager::mostrarLista(const Producto &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "ID Categoria: " << reg.getIdCategoria() << endl;

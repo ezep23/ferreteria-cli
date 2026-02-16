@@ -216,6 +216,155 @@ int EmpleadoManager::obtenerNumeroProximoID(){
     return _repo.getNuevoID();
 }
 
+void EmpleadoManager::mostrarNombresAZ() {
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empleados registrados." << endl;
+        return;
+    }
+
+    Empleado *vEmpleado = new Empleado[cantidad];
+    _repo.leerTodos(vEmpleado, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpleado[j].getNombre() < vEmpleado[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empleado temp = vEmpleado[i];
+            vEmpleado[i] = vEmpleado[j_min];
+            vEmpleado[j_min] = temp;
+        }
+    }
+
+    cout << "EMPLEADOS POR NOMBRE (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vEmpleado[x].getEstado()) {
+            mostrarLista(vEmpleado[x]);
+        }
+    }
+
+    delete[] vEmpleado;
+}
+void EmpleadoManager::mostrarNombresZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empleados registrados." << endl;
+        return;
+    }
+
+    Empleado *vEmpleado = new Empleado[cantidad];
+    _repo.leerTodos(vEmpleado, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpleado[j].getNombre() < vEmpleado[j_min].getNombre()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empleado temp = vEmpleado[i];
+            vEmpleado[i] = vEmpleado[j_min];
+            vEmpleado[j_min] = temp;
+        }
+    }
+
+    cout << "EMPLEADOS POR NOMBRE (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vEmpleado[x].getEstado()) {
+            mostrarLista(vEmpleado[x]);
+        }
+    }
+
+    delete[] vEmpleado;
+}
+void EmpleadoManager::mostrarApellidosAZ(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empleados registrados." << endl;
+        return;
+    }
+
+    Empleado *vEmpleado = new Empleado[cantidad];
+    _repo.leerTodos(vEmpleado, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpleado[j].getApellido() < vEmpleado[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empleado temp = vEmpleado[i];
+            vEmpleado[i] = vEmpleado[j_min];
+            vEmpleado[j_min] = temp;
+        }
+    }
+
+    cout << "EMPLEADOS POR APELLIDO (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vEmpleado[x].getEstado()) {
+            mostrarLista(vEmpleado[x]);
+        }
+    }
+
+    delete[] vEmpleado;
+}
+void EmpleadoManager::mostrarApellidosZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empleados registrados." << endl;
+        return;
+    }
+
+    Empleado *vEmpleado = new Empleado[cantidad];
+    _repo.leerTodos(vEmpleado, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpleado[j].getApellido() < vEmpleado[j_min].getApellido()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empleado temp = vEmpleado[i];
+            vEmpleado[i] = vEmpleado[j_min];
+            vEmpleado[j_min] = temp;
+        }
+    }
+
+    cout << "EMPLEADOS POR APELLIDO (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vEmpleado[x].getEstado()) {
+            mostrarLista(vEmpleado[x]);
+        }
+    }
+
+    delete[] vEmpleado;
+}
+
 void EmpleadoManager::mostrarLista(const Empleado &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "DNI: " << reg.getDni() << endl;

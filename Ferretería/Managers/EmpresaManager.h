@@ -11,6 +11,9 @@ class EmpresaManager{
     void eliminar();
     void actualizar();
 
+    void mostrarNombreComercialAZ();
+    void mostrarNombreComercialZA();
+
     bool validarEmpresaExiste(int id);
 
   protected:

@@ -21,6 +21,7 @@ class DetalleVentaManager
 
     float obtenerMontoCategoria(int idTrans, int idCat);
     int obtenerCantidadCategoria(int idTrans, int idCat);
+    int obtenerCantidadProductos(int idCliente);
 
     void mostrarDetalleCompleto(const DetalleTransaccion &reg);
   private:

@@ -12,6 +12,11 @@ class EmpleadoManager{
     void eliminar();
     void actualizar();
 
+    void mostrarNombresAZ();
+    void mostrarNombresZA();
+    void mostrarApellidosAZ();
+    void mostrarApellidosZA();
+
     bool existeRegistro(int id);
     int obtenerNumeroProximoID();
 

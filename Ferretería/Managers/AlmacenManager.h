@@ -16,6 +16,13 @@ class AlmacenManager{
     void listarPorCategoria();
     void listarBajoStock();
 
+    void mostrarNombresAZ();
+    void mostrarNombresZA();
+    void mostrarPreciosAltoBajo();
+    void mostrarPreciosBajoAlto();
+    void mostrarStockAltoBajo();
+    void mostrarStockBajoAlto();
+
     int obtenerStock(int id);
     float obtenerPrecio(int id);
     int obtenerCategoriaProducto(int id);

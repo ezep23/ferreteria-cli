@@ -131,6 +131,82 @@ bool EmpresaManager::validarEmpresaExiste(int idE){
     return false;
 }
 
+void EmpresaManager::mostrarNombreComercialAZ() {
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empresas registrados." << endl;
+        return;
+    }
+
+    Empresa *vEmpresa = new Empresa[cantidad];
+    _repo.leerTodos(vEmpresa, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpresa[j].getNombreComercial() < vEmpresa[j_min].getNombreComercial()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empresa temp = vEmpresa[i];
+            vEmpresa[i] = vEmpresa[j_min];
+            vEmpresa[j_min] = temp;
+        }
+    }
+
+    cout << "EMPRESAS (A-Z): " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vEmpresa[x].getEstado()) {
+            mostrarLista(vEmpresa[x]);
+        }
+    }
+
+    delete[] vEmpresa;
+}
+void EmpresaManager::mostrarNombreComercialZA(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay empresas registrados." << endl;
+        return;
+    }
+
+    Empresa *vEmpresa = new Empresa[cantidad];
+    _repo.leerTodos(vEmpresa, cantidad);
+
+    // ORDENAMIENTO (Selection Sort sin desempate)
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+            if (vEmpresa[j].getNombreComercial() < vEmpresa[j_min].getNombreComercial()) {
+                j_min = j;
+            }
+        }
+
+        if (j_min != i) {
+            Empresa temp = vEmpresa[i];
+            vEmpresa[i] = vEmpresa[j_min];
+            vEmpresa[j_min] = temp;
+        }
+    }
+
+    cout << "EMPRESAS (Z-A): " << endl;
+    for (int x = cantidad - 1; x >= 0; x--) {
+        if (vEmpresa[x].getEstado()) {
+            mostrarLista(vEmpresa[x]);
+        }
+    }
+
+    delete[] vEmpresa;
+}
+
+
 void EmpresaManager::mostrarLista(const Empresa &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "Razon social: " << reg.getRazonSocial() << endl;
