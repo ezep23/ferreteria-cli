@@ -20,6 +20,9 @@ class CompraManager
     void mostrar();
     void mostrar(int id);
 
+    void mostrarOrdenadasUltimaCompra();
+    void mostrarOrdenadasPrimeraCompra();
+
     void modificar();
     void eliminar();
 

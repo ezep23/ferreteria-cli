@@ -27,6 +27,9 @@ class VentaManager
     void obtenerNumeroProductosVendidosCategoria(int idCat);
     void ventasPorEmpleado();
 
+    void mostrarOrdenadasUltimaVenta();
+    void mostrarOrdenadasPrimeraVenta();
+
     int obtenerNumeroProductosVendidosCliente(int idCliente);
 
     void mostrar();

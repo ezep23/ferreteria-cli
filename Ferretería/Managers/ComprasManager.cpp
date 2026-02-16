@@ -73,6 +73,13 @@ void ComprasManager::mostrarCompra(){
 void ComprasManager::modificarCompra(){
 }
 
+void ComprasManager::mostrarOrdenadasUltimaCompra(){
+    _compraManager.mostrarOrdenadasPrimeraCompra();
+}
+void ComprasManager::mostrarOrdenadasPrimeraCompra(){
+    _compraManager.mostrarOrdenadasUltimaCompra();
+}
+
 void ComprasManager::eliminarCompra(){
     int id;
 

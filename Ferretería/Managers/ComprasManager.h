@@ -12,6 +12,9 @@ class ComprasManager{
     void modificarCompra();
     void eliminarCompra();
 
+    void mostrarOrdenadasUltimaCompra();
+    void mostrarOrdenadasPrimeraCompra();
+
   private:
     CompraManager _compraManager;
     DetalleCompraManager _detalleManager;

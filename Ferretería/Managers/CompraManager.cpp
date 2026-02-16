@@ -298,6 +298,128 @@ void CompraManager::comprasPorEmpleado(){
     delete[] cantEmpleados;
 }
 
+void CompraManager::mostrarOrdenadasUltimaCompra(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay compras registradas." << endl;
+        return;
+    }
+
+    Transaccion *vCompra = new Transaccion[cantidad];
+    _repo.leerTodos(vCompra, cantidad);
+
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_max = i; // Ahora buscamos el mayor
+
+        for (int j = i + 1; j < cantidad; j++) {
+
+            Fecha f_j = vCompra[j].getFechaTransaccion();
+            Fecha f_max = vCompra[j_max].getFechaTransaccion();
+
+            long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
+            long fechaMax_num = f_max.getAnio() * 10000 + f_max.getMes() * 100 + f_max.getDia();
+
+            // CAMBIO CLAVE: Usamos > para que la fecha más nueva gane
+            if (fechaJ_num > fechaMax_num) {
+                j_max = j;
+            }
+            // Desempate por hora si las fechas son iguales
+            else if (fechaJ_num == fechaMax_num) {
+
+                Hora h_j = vCompra[j].getHoraTransaccion();
+                Hora h_max = vCompra[j_max].getHoraTransaccion();
+
+                long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
+                long horaMax_num = h_max.getHora() * 100 + h_max.getMinutos();
+
+                // CAMBIO CLAVE: Usamos > para la hora también
+                if (horaJ_num > horaMax_num) {
+                    j_max = j;
+                }
+            }
+        }
+
+        // Intercambio manual (Swap)
+        if (j_max != i) {
+            Transaccion temp = vCompra[i];
+            vCompra[i] = vCompra[j_max];
+            vCompra[j_max] = temp;
+        }
+    }
+
+    cout << "COMPRAS DESDE LA ÚLTIMA TRANSACCIÓN: " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vCompra[x].getEstado()) {
+            mostrarCompraCompleta(vCompra[x]);
+        }
+    }
+
+    delete[] vCompra;
+}
+
+void CompraManager::mostrarOrdenadasPrimeraCompra(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay compras registradas." << endl;
+        return;
+    }
+
+    Transaccion *vCompra = new Transaccion[cantidad];
+    _repo.leerTodos(vCompra, cantidad);
+
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+
+            // 1. Extraemos las fechas de los objetos que estamos comparando
+            Fecha f_j = vCompra[j].getFechaTransaccion();
+            Fecha f_min = vCompra[j_min].getFechaTransaccion();
+
+            // 2. Aplicamos el truco matemático (AAAAMMDD)
+            long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
+            long fechaMin_num = f_min.getAnio() * 10000 + f_min.getMes() * 100 + f_min.getDia();
+
+            // Comparamos los enteros de las fechas
+            if (fechaJ_num < fechaMin_num) {
+                j_min = j;
+            }
+            // 3. Solo si las fechas son exactamente iguales, desempatamos por la hora
+            else if (fechaJ_num == fechaMin_num) {
+
+                Hora h_j = vCompra[j].getHoraTransaccion();
+                Hora h_min = vCompra[j_min].getHoraTransaccion();
+
+                // Aplicamos el mismo truco para la hora (HHMM)
+                long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
+                long horaMin_num = h_min.getHora() * 100 + h_min.getMinutos();
+
+                if (horaJ_num < horaMin_num) {
+                    j_min = j;
+                }
+            }
+        }
+
+        // swap
+        if (j_min != i) {
+            Transaccion temp = vCompra[i];
+            vCompra[i] = vCompra[j_min];
+            vCompra[j_min] = temp;
+        }
+    }
+
+    cout << "COMPRAS DESDE LA PRIMERA TRANSACCION: " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vCompra[x].getEstado()) {
+            mostrarCompraCompleta(vCompra[x]);
+        }
+    }
+
+    delete[] vCompra;
+}
+
 void CompraManager::mostrarCompraCompleta(const Transaccion &reg){
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;

@@ -635,6 +635,127 @@ void VentaManager::ventasPorEmpleado(){
     delete[] cantEmpleados;
 }
 
+void VentaManager::mostrarOrdenadasUltimaVenta(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay ventas registradas." << endl;
+        return;
+    }
+
+    Transaccion *vVenta = new Transaccion[cantidad];
+    _repo.leerTodos(vVenta, cantidad);
+
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_max = i; // Ahora buscamos el mayor
+
+        for (int j = i + 1; j < cantidad; j++) {
+
+            Fecha f_j = vVenta[j].getFechaTransaccion();
+            Fecha f_max = vVenta[j_max].getFechaTransaccion();
+
+            long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
+            long fechaMax_num = f_max.getAnio() * 10000 + f_max.getMes() * 100 + f_max.getDia();
+
+            // CAMBIO CLAVE: Usamos > para que la fecha más nueva gane
+            if (fechaJ_num > fechaMax_num) {
+                j_max = j;
+            }
+            // Desempate por hora si las fechas son iguales
+            else if (fechaJ_num == fechaMax_num) {
+
+                Hora h_j = vVenta[j].getHoraTransaccion();
+                Hora h_max = vVenta[j_max].getHoraTransaccion();
+
+                long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
+                long horaMax_num = h_max.getHora() * 100 + h_max.getMinutos();
+
+                // CAMBIO CLAVE: Usamos > para la hora también
+                if (horaJ_num > horaMax_num) {
+                    j_max = j;
+                }
+            }
+        }
+
+        // Intercambio manual (Swap)
+        if (j_max != i) {
+            Transaccion temp = vVenta[i];
+            vVenta[i] = vVenta[j_max];
+            vVenta[j_max] = temp;
+        }
+    }
+
+    cout << "VENTAS DESDE LA ÚLTIMA TRANSACCIÓN: " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vVenta[x].getEstado()) {
+            mostrarVentaCompleta(vVenta[x]);
+        }
+    }
+
+    delete[] vVenta;
+}
+void VentaManager::mostrarOrdenadasPrimeraVenta(){
+    int cantidad = _repo.getCantidadRegistros();
+
+    if (cantidad <= 0) {
+        cout << "No hay ventas registradas." << endl;
+        return;
+    }
+
+    Transaccion *vVenta = new Transaccion[cantidad];
+    _repo.leerTodos(vVenta, cantidad);
+
+    for (int i = 0; i < cantidad - 1; i++) {
+        int j_min = i;
+
+        for (int j = i + 1; j < cantidad; j++) {
+
+            // 1. Extraemos las fechas de los objetos que estamos comparando
+            Fecha f_j = vVenta[j].getFechaTransaccion();
+            Fecha f_min = vVenta[j_min].getFechaTransaccion();
+
+            // 2. Aplicamos el truco matemático (AAAAMMDD)
+            long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
+            long fechaMin_num = f_min.getAnio() * 10000 + f_min.getMes() * 100 + f_min.getDia();
+
+            // Comparamos los enteros de las fechas
+            if (fechaJ_num < fechaMin_num) {
+                j_min = j;
+            }
+            // 3. Solo si las fechas son exactamente iguales, desempatamos por la hora
+            else if (fechaJ_num == fechaMin_num) {
+
+                Hora h_j = vVenta[j].getHoraTransaccion();
+                Hora h_min = vVenta[j_min].getHoraTransaccion();
+
+                // Aplicamos el mismo truco para la hora (HHMM)
+                long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
+                long horaMin_num = h_min.getHora() * 100 + h_min.getMinutos();
+
+                if (horaJ_num < horaMin_num) {
+                    j_min = j;
+                }
+            }
+        }
+
+        // swap
+        if (j_min != i) {
+            Transaccion temp = vVenta[i];
+            vVenta[i] = vVenta[j_min];
+            vVenta[j_min] = temp;
+        }
+    }
+
+    cout << "VENTAS DESDE LA PRIMERA TRANSACCION: " << endl;
+    for (int x = 0; x < cantidad; x++) {
+        if (vVenta[x].getEstado()) {
+            mostrarVentaCompleta(vVenta[x]);
+        }
+    }
+
+    delete[] vVenta;
+}
+
 void VentaManager::mostrarVentaCompleta(const Transaccion &reg){
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;

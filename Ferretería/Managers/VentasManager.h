@@ -12,6 +12,9 @@ class VentasManager{
     void modificarVenta();
     void eliminarVenta();
 
+    void mostrarOrdenadasUltimaVenta();
+    void mostrarOrdenadasPrimeraVenta();
+
   private:
     VentaManager _ventaManager;
     DetalleVentaManager _detalleManager;

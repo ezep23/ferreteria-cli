@@ -74,6 +74,13 @@ void VentasManager::mostrarVenta(){
 void VentasManager::modificarVenta(){
 }
 
+void VentasManager::mostrarOrdenadasUltimaVenta(){
+    _ventaManager.mostrarOrdenadasPrimeraVenta();
+}
+void VentasManager::mostrarOrdenadasPrimeraVenta(){
+    _ventaManager.mostrarOrdenadasUltimaVenta();
+}
+
 void VentasManager::eliminarVenta(){
     int id;
 
@@ -88,8 +95,6 @@ void VentasManager::eliminarVenta(){
     /// NI ME ACUERDO COMO FUNCIONABA ESTO
     _detalleManager.eliminar();
     _ventaManager.eliminar();
-
-
 }
 
 
