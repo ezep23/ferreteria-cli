@@ -187,7 +187,9 @@ void CompraManager::modificar(){
 
         cout << "NO EXISTE ESE EMPLEADO" << endl;
         return;
+
     }
+    break;
     case 2:{
 
         int dia, mes, anio;
@@ -211,9 +213,29 @@ void CompraManager::modificar(){
             cout << "FECHA ACTUALIZADA CORRECTAMENTE";
         }
 
+        break;
      }
     case 3:{
+        int h, minu;
+        Hora hora;
 
+        do{
+            system("cls");
+            cout << "Ingrese la hora actual: ";
+            h = pedirEnteroValido();
+
+            cout << "Ingrese los minutos actuales: ";
+            minu = pedirEnteroValido();
+
+        } while(!hora.validarHora(h, minu));
+
+        reg.setHoraEmision(hora);
+
+        if(_repo.guardar(pos, reg)){
+            cout << "FECHA ACTUALIZADA CORRECTAMENTE";
+        }
+
+        break;
     }
  }
 }

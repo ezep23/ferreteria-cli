@@ -18,6 +18,7 @@ class DetalleCompraArchivo{
     int getCantidadRegistros();
     int getNuevoID();
 
+
     void crearBackup();
     void cargarBackup();
   private:

@@ -72,6 +72,7 @@ void ComprasManager::mostrarCompra(){
 }
 
 void ComprasManager::modificarCompra(){
+    _compraManager.modificar();
 }
 
 void ComprasManager::mostrarOrdenadasUltimaCompra(){

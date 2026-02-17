@@ -101,6 +101,17 @@ void DetalleVentaManager::mostrar(int id){
     }
 }
 
+void DetalleVentaManager::mostrarDetallesTransaccion(int idTransaccion){
+  cout << "------ Lista detalles ventas con id " << idTransaccion << " ------  "<<endl;
+  int cantidad = _repo.getCantidadRegistros();
+
+  for(int i=0; i<cantidad; i++){
+    if(_repo.leer(i).getEstado() && _repo.leer(i).getIdTransaccion() == idTransaccion){
+        mostrarDetalleCompleto(_repo.leer(i));
+    }
+  }
+}
+
 float DetalleVentaManager::obtenerMontoCategoria(int idTrans, int idCat){
     int cantidad = _repo.getCantidadRegistros();
     float acum = 0;
@@ -141,28 +152,28 @@ int DetalleVentaManager::obtenerCantidadCategoria(int idTrans, int idCat){
     return acum;
 }
 
-/* void DetalleVentaManager::modificar(){
-  int id, pos, opc;
-  cout << "Ingrese el ID de la venta: ";
-  cin >> id;
+void DetalleVentaManager::modificar(){
+  int id, idDetalle, pos, opc;
 
-  pos = _repo.buscarID(id);
+  do{
+    cout << "Ingrese el ID de la venta: ";
+    id = pedirEnteroValido();
+  }while(!validarExisteTransaccion(id))
 
-  if(pos == -1){
-    cout << "ESE REGISTRO NO EXISTE" << endl;
-    return;
-  }
+  cout << "DETALLES DE ESA TRANSACCION" << endl;
+  mostrarDetallesTransaccion(id);
 
-  Transaccion reg = _repo.leer(pos);
+  do{
+    cout << "Ingrese el ID del detalle a modificar: ";
+    idDetalle = pedirEnteroValido();
+  }while(!validarDetallePerteneceTransaccion(idDetalle, id));
 
   system("cls");
   cout << "Que desea modificar?" << endl;
-  cout << " 1 - ID CLIENTE" << endl;
-  cout << " 2 - FECHA" << endl;
-  cout << " 3 - HORA" << endl;
-  cout << " 4 - TIPO DE FACTURA" << endl;
+  cout << " 1 - ID PRODUCTO" << endl;
+  cout << " 2 - CANTIDAD" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -171,114 +182,69 @@ int DetalleVentaManager::obtenerCantidadCategoria(int idTrans, int idCat){
      }
     case 1:{
 
-        if(reg.getEstado()){
+        int idProducto;
 
-            int posCliente = _repoCliente.buscarID(reg.getIdPersona());
-            Cliente cli = _repoCliente.leer(posCliente);
-            cout << " ID CLIENTE: " << cli.getId() << endl;
-            cout << " NOMBRE Y APELLIDO: " << cli.getNombre() << " " << cli.getApellido() << endl;
+        do{
+            cout << "Ingrese el ID del producto nuevo: ";
+            idProducto = pedirEnteroValido();
+        }while(!_almacenManager.validarID(idProducto));
 
-            int opc;
+        int pos = _repo.buscarID(idProducto);
+        DetalleTransaccion detalle = _repo.leer(pos);
 
-            cout << " Ingrese el ID del cliente (0 - salir)" << endl;
-            cin >> opc;
+        detalle.setIdProducto(idProducto);
+        _repo.guardar(pos, detalle);
 
-            if(opc <= 0){
-                return;
-            }
-
-            if(opc > 0 ){
-
-                posCliente = _repoCliente.buscarID(opc);
-                Cliente cli = _repoCliente.leer(posCliente);
-
-                if(cli.getEstado()){
-                    reg.setIdPersona(opc);
-
-                    if(_repo.guardar(pos, reg)){
-                        cout << "SE GUARDO EL REGISTRO" << endl;
-                        return;
-                    }
-
-                    cout << "NO SE PUDO GUARDAR EL REGISTRO" << endl;
-                    return;
-                }
-
-                cout << "NO SE ENCONTRÓ ESE CLIENTE" << endl;
-                return;
-            }
-
-            cout << "NO SE PUDO MODIFICAR LA VENTA" << endl;
-            return;
-        }
-
-        cout << "NO EXISTE ESE CLIENTE" << endl;
-        return;
+        cout << "ID DE PRODUCTO ACTUALIZADO CORRECTAMENTE" << endl;
+        cout << "NUEVO ID: " << idProducto << endl;
     }
+    break;
     case 2:{
 
-        int dia, mes, anio;
-        Fecha fecha;
+        int pos = _repo.buscarID(idProducto);
+        DetalleTransaccion detalle = _repo.leer(pos);
+
+        int cantidad;
+        int idProd = detalle.getIdProducto();
+        int cantidadAnterior = detalle.getCantidad();
+
+        int stockMaximoPermitido = _almacenManager.obtenerStock(idProd) + cantidadAnterior;
+
         do{
-            system("cls");
-            cout << "Ingrese el dia de hoy: ";
-            cin >> dia;
+            cout << "Usted llevaba esta cantidad del producto: " << cantidadAnterior << endl;
+            cout << "Stock maximo disponible para llevar: " << stockMaximoPermitido << endl;
+            cout << "Ingrese la cantidad actualizada que va a llevar: ";
+            cantidad = pedirEnteroValido();
 
-            cout << "Ingrese el mes actual: ";
-            cin >> mes;
+            if(cantidad <= 0){
+                cout << "Sea serio, por favor." << endl;
+                return;
+            }
 
-            cout << "Ingrese el anio actual: ";
-            cin >> anio;
-        }while(!fecha.validarFecha(dia, mes, anio));
+            if (cantidad > stockMaximoPermitido) {
+                cout << "ERROR: La cantidad supera el stock disponible." << endl;
+            }
+        } while(cantidad > stockMaximoPermitido);
 
-        reg.setFechaEmision(fecha);
-
-        if(_repo.guardar(pos, reg)){
-            cout << "FECHA ACTUALIZADA CORRECTAMENTE";
+        if(cantidad >= cantidadAnterior){
+            int descontar = cantidad - cantidadAnterior;
+            if (descontar > 0) {
+                _almacenManager.descontarStock(idProd, descontar);
+            }
+        } else {
+            int aumentar = cantidadAnterior - cantidad;
+            _almacenManager.rellenarStock(idProd, aumentar);
         }
 
+
+        detalle.setCantidad(cantidad);
+        _repo.guardar(pos, detalle);
+
+        cout << "CANTIDAD DE VENTA ACTUALIZADA" << endl;
+        break;
      }
-    case 3:{
-
-     }
-     case 4:{
-
-        cout << "TIPO DE FACTURA ACTUAL: " << reg.getTipoFactura() <<endl;
-        system("cls");
-
-        cout << "---- NUEVO TIPO DE FACTURA ---- "<< endl;
-        cout << " 0 - SALIR " << endl;
-        cout << " 1 - TIPO 'A' " << endl;
-        cout << " 2 - TIPO 'B' " << endl;
-        int opc;
-        cout << "Opcion: ";
-        cin >> opc;
-
-        if(opc == 0){
-            return;
-        }
-
-        if(opc == 1){
-            reg.setTipoFactura('A');
-            _repo.guardar(pos, reg);
-            cout << "TIPO DE FACTURA MODIFICADO" << endl;
-            return;
-        }
-
-        if(opc == 2){
-            reg.setTipoFactura('B');
-            _repo.guardar(pos, reg);
-            cout << "TIPO DE FACTURA MODIFICADO" << endl;
-            return;
-        }
-
-        cout << "ERROR" << endl;
-        return;
-
-     }
- }
+  }
 }
-*/
 
 void DetalleVentaManager::eliminar(){
     int id, pos;
@@ -302,6 +268,37 @@ void DetalleVentaManager::crearBackup(){
 }
 void DetalleVentaManager::cargarBackup(){
     _repo.cargarBackup();
+}
+
+bool DetalleVentaManager::validarExisteTransaccion(int idTransaccion){
+  int cantidad = _repo.getCantidadRegistros();
+  bool existeId = false;
+
+  for(int i=0; i<cantidad; i++){
+    if(_repo.leer(i).getEstado() && _repo.leer(i).getIdTransaccion() == idTransaccion){
+        existeId = true;
+        return existeId;
+    }
+  }
+
+  return existeId;
+}
+
+ bool DetalleVentaManager::validarDetallePerteneceTransaccion(int idDetalle, int idTransaccion){
+    int cantidad = _repo.getCantidadRegistros();
+    bool existeId = false;
+
+    for(int i=0; i<cantidad; i++){
+    if(_repo.leer(i).getEstado() && _repo.leer(i).getId() == idDetalle){
+
+        if(_repo.leer(i).getIdTransaccion() == idTransaccion){
+            existeId = true;
+            return existeId;
+        }
+    }
+  }
+
+  return existeId;
 }
 
 void DetalleVentaManager::mostrarDetalleCompleto(const DetalleTransaccion &reg){

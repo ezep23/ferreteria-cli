@@ -191,4 +191,3 @@ void DetalleVentaArchivo::cargarBackup(){
     fclose(pBackup);
     cout << " # COPIA DE SEGURIDAD DE DETALLES DE VENTAS RESTAURADA CON EXITO" << endl;
 }
-

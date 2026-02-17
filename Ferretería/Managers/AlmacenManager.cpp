@@ -263,7 +263,83 @@ int AlmacenManager::obtenerCategoriaProducto(int id){
 }
 
 void AlmacenManager::actualizarProducto(){
+  int id, pos, opc;
 
+  cout << "Ingrese el ID del cliente: ";
+  id = pedirEnteroValido();
+
+  /// HABRÁ QUE VALIDAR ACÁ?
+
+  pos = _repo.buscarID(id);
+  Producto reg = _repo.leer(pos);
+
+  system("cls");
+  cout << "Que desea actualizar?" << endl;
+  cout << " 1 - NOMBRE" << endl;
+  cout << " 2 - PRECIO" << endl;
+  cout << " 3 - STOCK" << endl;
+  cout << "-------------" << endl;
+  cout << " 0 - SALIR" << endl;
+  cout << " Opcion: ";
+  opc = pedirEnteroValido();
+
+  switch(opc){
+    case 0:{
+        return;
+     }
+    case 1:{
+        string nombre;
+
+        do{
+          cout << "Ingrese el nuevo nombre: ";
+          nombre = cargarCadena();
+        }while(!validarCadena(nombre));
+
+        reg.setNombre(nombre);
+        _repo.guardar(pos, reg);
+
+        cout << "NOMBRE ACTUALIZADO" << endl;
+        return;
+
+     }
+     case 2:{
+        float precio
+
+        cout << "Ingrese el nuevo precio: ";
+        precio = pedirFlotanteValido();
+
+        if(precio > 0){
+            reg.setPrecio(precio);
+            _repo.guardar(pos, reg);
+
+            cout << "PRECIO ACTUALIZADO" << endl;
+            return;
+        }
+
+        cout << "NO SE PUDO ACTUALIZAR";
+        return;
+     }
+     case 3:{
+        int stock;
+
+        do{
+          cout << "Ingrese el nuevo stock: ";
+          stock = pedirEnteroValido();
+        }while(!validarNumero(stock));
+
+        if(stock > 0){
+            reg.setDni(dni);
+            _repo.guardar(pos, reg);
+
+            cout << "STOCK ACTUALIZADO" << endl;
+            return;
+        }
+
+
+        cout << "NO SE PUDO ACTUALIZAR";
+        return;
+     }
+   }
 }
 
 void AlmacenManager::numeroProductosProveedor(){

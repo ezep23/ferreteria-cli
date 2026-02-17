@@ -15,6 +15,7 @@ class DetalleVentaManager
 
     void mostrar();
     void mostrar(int id);
+    void mostrarDetallesTransaccion(int idTransaccion);
 
     void modificar();
     void eliminar();
@@ -25,6 +26,9 @@ class DetalleVentaManager
 
     void crearBackup();
     void cargarBackup();
+
+    bool validarExisteTransaccion(int idTransaccion);
+    bool validarDetallePerteneceTransaccion(int idDetalle, int idTransaccion);
 
     void mostrarDetalleCompleto(const DetalleTransaccion &reg);
   private:

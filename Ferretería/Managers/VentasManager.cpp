@@ -73,6 +73,7 @@ void VentasManager::mostrarVenta(){
 }
 
 void VentasManager::modificarVenta(){
+    _ventaManager.modificar();
 }
 
 void VentasManager::mostrarOrdenadasUltimaVenta(){
