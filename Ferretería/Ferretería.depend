@@ -130,7 +130,7 @@
 	"../Entidades/Transaccion.h"
 	"VentaManager.h"
 
-1769445483 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.h
+1771295588 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.h
 	<string>
 
 1770569364 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.cpp
@@ -251,7 +251,7 @@
 	"Menu.h"
 	"../Managers/EmpresaManager.h"
 
-1771255140 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.h
+1771276121 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.h
 	"../Archivos/EmpresaArchivo.h"
 
 1769639176 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empresaarchivo.h
@@ -266,7 +266,7 @@
 	<iostream>
 	"EmpresaMenu.h"
 
-1771255139 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.cpp
+1771276198 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.cpp
 	<iostream>
 	"EmpresaManager.h"
 	"../Entidades/Empresa.h"
@@ -309,7 +309,7 @@
 	"../Archivos/DetalleVentaArchivo.h"
 	"AlmacenManager.h"
 
-1770293749 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.cpp
+1771273865 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.cpp
 	<iostream>
 	"VentasManager.h"
 
@@ -350,7 +350,7 @@
 	<iostream>
 	"DetalleCompraArchivo.h"
 
-1771008907 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
+1771273888 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/Empleado.h"
@@ -367,7 +367,7 @@
 	"../Entidades/DetalleTransaccion.h"
 	"DetalleCompraManager.h"
 
-1770465998 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\compramenu.cpp
+1771273864 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\compramenu.cpp
 	<iostream>
 	"CompraMenu.h"
 

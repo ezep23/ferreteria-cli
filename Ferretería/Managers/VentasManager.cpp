@@ -60,7 +60,7 @@ void VentasManager::mostrarVenta(){
     int id;
 
     cout << "Ingrese el ID de la venta: ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     if(id < 1){
         cout << "ESE ID NO ES POSIBLE";
@@ -86,7 +86,7 @@ void VentasManager::eliminarVenta(){
 
     cout << "ATENCIÓN SE ELIMINARA LA VENTA COMO SUS DETALLES" << endl;
     cout << "Ingrese el ID de la transacción (0 - Para salir): ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     if(id <= 0){
         return;

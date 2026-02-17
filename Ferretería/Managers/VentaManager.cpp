@@ -30,7 +30,7 @@ int VentaManager::cargar() {
 
     do {
         cout << "Ingrese el ID de Cliente ('0' - para salir): ";
-        cin >> idCliente;
+        idCliente = pedirEnteroValido();
 
         if (idCliente == 0) {
             return 0;
@@ -49,14 +49,14 @@ int VentaManager::cargar() {
 
        cout << "Ingrese el ID del empleado ('O' - Para listar) " << endl;
        cout << "ID: ";
-       cin >> idEmpleado;
+       idEmpleado = pedirEnteroValido();
 
        if(idEmpleado = 0){
             cout << "EMPLEADOS" << endl;
             _empleadoManager.mostrar();
 
             cout << "Ingrese el ID del empleado: ";
-            cin >> idEmpleado;
+            idEmpleado = pedirEnteroValido();
         }
 
         if ( !_empleadoManager.existeRegistro(idEmpleado)) {
@@ -151,7 +151,7 @@ void VentaManager::mostrar(int id){
 void VentaManager::modificar(){
   int id, pos, opc;
   cout << "Ingrese el ID de la venta: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
 
@@ -169,7 +169,7 @@ void VentaManager::modificar(){
   cout << " 3 - HORA" << endl;
   cout << " 4 - TIPO DE FACTURA" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -188,7 +188,7 @@ void VentaManager::modificar(){
             int opc;
 
             cout << " Ingrese el ID del cliente (0 - salir)" << endl;
-            cin >> opc;
+            opc = pedirEnteroValido();
 
             if(opc <= 0){
                 return;
@@ -229,13 +229,14 @@ void VentaManager::modificar(){
         do{
             system("cls");
             cout << "Ingrese el dia de hoy: ";
-            cin >> dia;
+            dia = pedirEnteroValido();
 
             cout << "Ingrese el mes actual: ";
-            cin >> mes;
+            mes = pedirEnteroValido();
 
             cout << "Ingrese el anio actual: ";
-            cin >> anio;
+            anio = pedirEnteroValido();
+
         }while(!fecha.validarFecha(dia, mes, anio));
 
         reg.setFechaEmision(fecha);
@@ -257,9 +258,11 @@ void VentaManager::modificar(){
         cout << " 0 - SALIR " << endl;
         cout << " 1 - TIPO 'A' " << endl;
         cout << " 2 - TIPO 'B' " << endl;
+
         int opc;
+
         cout << "Opcion: ";
-        cin >> opc;
+        opc = pedirEnteroValido();
 
         if(opc == 0){
             return;
@@ -293,7 +296,7 @@ void VentaManager::eliminar(){
 
     cout << "---- Eliminar venta ----"<<endl;
     cout << "Ingrese ID de la venta: ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     pos = _repo.buscarID(id);
 

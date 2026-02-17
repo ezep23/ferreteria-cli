@@ -25,24 +25,21 @@ void ClienteManager::cargar(){
   cout << "Cargar Nuevo Personal ----" << endl;
   cout << "ID: " << id << endl;
 
-  cout << "Ingrese DNI: ";
-  dni = cargarCadena();
+  do{
+    cout << "Ingrese DNI: ";
+    dni = cargarCadena();
+  } while(!validarDNI(dni));
 
-  if(!validarDNI(dni)){
-    do{
-        cout << "Error, ingrese un dni correcto: ";
+  do{
+    cout << "Ingrese nombre: ";
+    nombre = cargarCadena();
+  }while(!validarCadena(nombre));
 
-        dni = cargarCadena();
-        validarDNI(dni);
+  do{
+    cout << "Ingrese apellido: ";
+    apellido = cargarCadena();
+  }while(!validarCadena(apellido));
 
-    }while(validarDNI(dni));
-  }
-
-  cout << "Ingrese nombre: ";
-  nombre = cargarCadena();
-
-  cout << "Ingrese apellido: ";
-  apellido = cargarCadena();
 
   if(_repo.guardar(Cliente(id, nombre, apellido, dni))){
     cout << "Se agrego correctamente" << endl;
@@ -77,7 +74,7 @@ void ClienteManager::mostrar(){
 void ClienteManager::eliminar(){
   int id, pos;
   cout << "Ingrese el ID del cliente: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   if(_repo.eliminar(pos)){
@@ -92,7 +89,7 @@ void ClienteManager::eliminar(){
 void ClienteManager::actualizar(){
   int id, pos, opc;
   cout << "Ingrese el ID del cliente: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   Cliente reg = _repo.leer(pos);
@@ -103,7 +100,7 @@ void ClienteManager::actualizar(){
   cout << " 2 - APELLIDO" << endl;
   cout << " 3 - DNI" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -113,7 +110,11 @@ void ClienteManager::actualizar(){
      }
     case 1:{
         string nombre;
-        nombre = cargarCadena();
+
+        do{
+          cout << "Ingrese el nuevo nombre: ";
+          nombre = cargarCadena();
+        }while(!validarCadena(nombre));
 
         reg.setNombre(nombre);
         _repo.guardar(pos, reg);
@@ -124,7 +125,11 @@ void ClienteManager::actualizar(){
      }
      case 2:{
         string apellido;
-        apellido = cargarCadena();
+
+        do{
+          cout << "Ingrese el nuevo apellido: ";
+          apellido = cargarCadena();
+        }while(!validarCadena(apellido));
 
         reg.setApellido(apellido);
         _repo.guardar(pos, reg);
@@ -134,17 +139,11 @@ void ClienteManager::actualizar(){
      }
      case 3:{
         string dni;
-        dni = cargarCadena();
 
-        if(!validarDNI(dni)){
-            do{
-                cout << "Error, ingrese un dni correcto: ";
-
-                dni = cargarCadena();
-                validarDNI(dni);
-
-            }while(validarDNI(dni));
-        }
+        do{
+          cout << "Ingrese el nuevo DNI: ";
+          dni = cargarCadena();
+        }while(!validarDNI(dni));
 
         reg.setDni(dni);
         _repo.guardar(pos, reg);

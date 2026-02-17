@@ -19,11 +19,16 @@ void EmpresaManager::cargar(){
   id = _repo.getNuevoID();
 
   cout << "NUEVA EMPRESA" << endl;
-  cout << "Ingrese la razon social: ";
-  razonSocial = cargarCadena();
 
-  cout << "Ingrese el nombre comercial: ";
-  nombreComercial = cargarCadena();
+  do{
+    cout << "Ingrese la razon social: ";
+    razonSocial = cargarCadena();
+  } while (!validarCadenaEspacios(razonSocial));
+
+  do{
+    cout << "Ingrese el nombre comercial: ";
+    nombreComercial = cargarCadena();
+  } while (!validarCadenaEspacios(nombreComercial));
 
   if(_repo.guardar(Empresa(id, razonSocial, nombreComercial))){
     cout << "EMPRESA GUARDADA" << endl;
@@ -56,7 +61,7 @@ void EmpresaManager::mostrar(){
 void EmpresaManager::eliminar(){
   int id, pos;
   cout << "Ingrese el ID de la empresa: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   if(_repo.eliminar(pos)){
@@ -70,8 +75,9 @@ void EmpresaManager::eliminar(){
 
 void EmpresaManager::actualizar(){
   int id, pos, opc;
+
   cout << "Ingrese el ID de la empresa: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   Empresa reg = _repo.leer(pos);
@@ -82,7 +88,7 @@ void EmpresaManager::actualizar(){
   cout << " 2 - NOMBRE COMERCIAL " << endl;
   cout << " 0 - SALIR" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -91,9 +97,10 @@ void EmpresaManager::actualizar(){
     case 1:{
         string razonSocial;
 
-        cout << "Ingrese la nueva razon social: ";
-
-        razonSocial = cargarCadena();
+        do{
+            cout << "Ingrese la nueva razon social: ";
+            razonSocial = cargarCadena();
+        }while(!validarCadena(razonSocial));
 
         reg.setRazonSocial(razonSocial);
         _repo.guardar(pos, reg);
@@ -105,9 +112,10 @@ void EmpresaManager::actualizar(){
     case 2:{
         string nombreComercial;
 
-        cout << "Ingrese el nuevo nombre comercial: ";
-
-        nombreComercial = cargarCadena();
+        do{
+            cout << "Ingrese el nuevo nombre comercial: ";
+            nombreComercial = cargarCadena();
+        }while(!validarCadena(nombreComercial));
 
         reg.setNombreComercial(nombreComercial);
         _repo.guardar(pos, reg);
@@ -206,6 +214,10 @@ void EmpresaManager::mostrarNombreComercialZA(){
     delete[] vEmpresa;
 }
 
+void EmpresaManager::mostrarNombreEmpresa(int id){
+    int pos = _repo.buscarID(id);
+    cout << "ID: " << _repo.leer(pos).getId() <<  " - " <<  "NOMBRE: " << _repo.leer(pos).getNombreComercial() << endl;
+}
 
 void EmpresaManager::mostrarLista(const Empresa &reg){
   cout << "ID: " << reg.getId() << endl;

@@ -59,7 +59,7 @@ void ComprasManager::mostrarCompra(){
     int id;
 
     cout << "Ingrese el ID de la compra: ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     if(id < 1){
         cout << "ESE ID NO ES POSIBLE";
@@ -85,7 +85,7 @@ void ComprasManager::eliminarCompra(){
 
     cout << "ATENCIÓN SE ELIMINARA LA COMPRA COMO SUS DETALLES" << endl;
     cout << "Ingrese el ID de la transacción (0 - Para salir): ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     if(id <= 0){
         return;

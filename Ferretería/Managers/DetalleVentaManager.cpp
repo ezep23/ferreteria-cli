@@ -30,7 +30,7 @@ float DetalleVentaManager::cargar(int idTrans){
     total = 0;
 
     cout << "CUANTOS PRODUCTOS VA A LLEVAR? -> Opcion: ";
-    cin >> opc;
+    opc = pedirEnteroValido();
 
     for(int i=0; i<opc; i++){
         id = _repo.getNuevoID();
@@ -39,25 +39,25 @@ float DetalleVentaManager::cargar(int idTrans){
         cout << "Ingresando detalle de venta numero " << (i + 1) << endl;
 
         cout << "Ingrese el id de producto: ";
-        cin >> idProducto;
+        idProducto = pedirEnteroValido();
 
         if(!_almacenManager.validarID(idProducto)){
             do{
                 cout << "ESE ID NO EXISTE" << endl;
                 cout << "Ingrese un id real: ";
-                cin >> idProducto;
+                idProducto = pedirEnteroValido();
             }while(!_almacenManager.validarID(idProducto));
         }
 
         cout << "Ingrese la cantidad de ese producto a llevar: ";
-        cin >> cantProducto;
+        cantProducto = pedirEnteroValido();
 
         if( _almacenManager.obtenerStock(idProducto) < cantProducto){
 
             do{
                 cout << "NO HAY CANTIDAD SUFICIENTE EN EL ALMACEN" << endl;
                 cout << "Ingrese la cantidad de ese producto a llevar: ";
-                cin >> cantProducto;
+                cantProducto = pedirEnteroValido();
             }while(_almacenManager.obtenerStock(idProducto) < cantProducto);
         }
 
@@ -283,7 +283,7 @@ int DetalleVentaManager::obtenerCantidadCategoria(int idTrans, int idCat){
 void DetalleVentaManager::eliminar(){
     int id, pos;
     cout << "Ingrese el ID de la venta: ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     int cantidad = _repo.getCantidadRegistros();
 

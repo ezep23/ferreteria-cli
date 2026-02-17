@@ -14,6 +14,10 @@ class EmpresaManager{
     void mostrarNombreComercialAZ();
     void mostrarNombreComercialZA();
 
+    int retornarIDsNombresOrdenadosAZ();
+    int retornarIDsNombresOrdenadosZA();
+
+    void mostrarNombreEmpresa(int id);
     bool validarEmpresaExiste(int id);
 
   protected:

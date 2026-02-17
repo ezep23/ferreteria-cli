@@ -20,8 +20,10 @@ void CategoriaManager::cargar(){
   id = _repo.getNuevoID();
 
   cout << "NUEVA CATEGORIA" << endl;
-  cout << "Ingrese el nombre: ";
-  nombre = cargarCadena();
+  do{
+    cout << "Ingrese el nombre: ";
+    nombre = cargarCadena();
+  }while(!validarCadena(nombre));
 
   if(_repo.guardar(Categoria(id, nombre))){
     cout << "CATEGORIA GUARDADA" << endl;
@@ -54,7 +56,7 @@ void CategoriaManager::mostrar(){
 void CategoriaManager::eliminar(){
   int id, pos;
   cout << "Ingrese el ID de la categoria: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   if(_repo.eliminar(pos)){
@@ -68,8 +70,9 @@ void CategoriaManager::eliminar(){
 
 void CategoriaManager::actualizar(){
   int id, pos, opc;
+
   cout << "Ingrese el ID de la categoria: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   Categoria reg = _repo.leer(pos);
@@ -79,7 +82,7 @@ void CategoriaManager::actualizar(){
   cout << " 1 - NOMBRE" << endl;
   cout << " 0 - SALIR" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -88,9 +91,10 @@ void CategoriaManager::actualizar(){
     case 1:{
         string nombre;
 
-        cout << "Ingrese el nuevo nombre: ";
-
-        nombre = cargarCadena();
+        do{
+            cout << "Ingrese el nuevo nombre: ";
+            nombre = cargarCadena();
+        }while(!validarCadena(nombre));
 
         reg.setNombre(nombre);
         _repo.guardar(pos, reg);

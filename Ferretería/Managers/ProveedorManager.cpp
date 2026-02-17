@@ -37,7 +37,7 @@ void ProveedorManager::cargar(){
   cout << "CARGAR NUEVO PROVEEDOR ----" << endl;
   cout << "ID EMPRESA (0 - Salir)" << endl;
   cout << "Opcion: ";
-  cin >> idE;
+  idE = pedirEnteroValido();
 
   if(idE <= 0){
     return;
@@ -51,30 +51,30 @@ void ProveedorManager::cargar(){
   }
   cout << "ID PROVEEDOR: " << id << endl;
 
-  cout << "Ingrese DNI: ";
-  dni = cargarCadena();
+  do{
+    cout << "Ingrese DNI: ";
+    dni = cargarCadena();
+  }while(!validarDNI(dni));
 
-  if(!validarDNI(dni)){
-    do{
-        cout << "Error, ingrese un dni correcto: ";
+  do{
+    cout << "Ingrese nombre: ";
+    nombre = cargarCadena();
+  }while(!validarCadena(nombre));
 
-        dni = cargarCadena();
-        validarDNI(dni);
+  do{
+    cout << "Ingrese apellido: ";
+    apellido = cargarCadena();
+  }while(!validarCadena(apellido));
 
-    }while(validarDNI(dni));
-  }
+  do{
+    cout << "Ingrese telefono: ";
+    telefono = cargarCadena();
+  }while(!validarCadena(telefono));
 
-  cout << "Ingrese nombre: ";
-  nombre = cargarCadena();
-
-  cout << "Ingrese apellido: ";
-  apellido = cargarCadena();
-
-  cout << "Ingrese telefono: ";
-  tel = cargarCadena();
-
-  cout << "Ingrese email: ";
-  email = cargarCadena();
+  do{
+    cout << "Ingrese email: ";
+    email = cargarCadena();
+  }while(!validarCadena(email));
 
   if(_repo.guardar(Proveedor(nombre, apellido, tel, email, dni, id, idE))){
     cout << "Se agrego correctamente" << endl;
@@ -113,7 +113,7 @@ void ProveedorManager::mostrar(){
 void ProveedorManager::eliminar(){
   int id, pos;
   cout << "Ingrese el ID del proveedor: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   if(_repo.eliminar(pos)){
@@ -128,7 +128,8 @@ void ProveedorManager::eliminar(){
 void ProveedorManager::actualizar(){
   int id, pos, opc;
   cout << "Ingrese el ID del proveedor: ";
-  cin >> id;
+  id = pedirEnteroValido();
+
 
   pos = _repo.buscarID(id);
   Proveedor reg = _repo.leer(pos);
@@ -142,7 +143,7 @@ void ProveedorManager::actualizar(){
   cout << " 5 - DNI" << endl;
   cout << " 6 - ESTADO" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -152,7 +153,11 @@ void ProveedorManager::actualizar(){
      }
     case 1:{
         string nombre;
-        nombre = cargarCadena();
+
+        do{
+            cout << "Ingrese el nuevo nombre: ";
+            nombre = cargarCadena();
+        }while(!validarCadena(nombre));
 
         reg.setNombre(nombre);
         _repo.guardar(pos, reg);
@@ -163,7 +168,11 @@ void ProveedorManager::actualizar(){
      }
     case 2:{
         string apellido;
-        apellido = cargarCadena();
+
+        do{
+            cout << "Ingrese el nuevo apellido: ";
+            apellido = cargarCadena();
+        }while(!validarCadena(apellido));
 
         reg.setApellido(apellido);
         _repo.guardar(pos, reg);
@@ -173,7 +182,11 @@ void ProveedorManager::actualizar(){
      }
      case 3:{
         string tel;
-        tel = cargarCadena();
+
+        do{
+            cout << "Ingrese el nuevo telefono: ";
+            tel = cargarCadena();
+        }while(!validarCadena(tel));
 
         reg.setTelefono(tel);
         _repo.guardar(pos, reg);
@@ -183,7 +196,11 @@ void ProveedorManager::actualizar(){
      }
      case 4:{
         string email;
-        email = cargarCadena();
+
+        do{
+            cout << "Ingrese el nuevo email: ";
+            email = cargarCadena();
+        }while(!validarCadena(email));
 
         reg.setEmail(email);
         _repo.guardar(pos, reg);
@@ -193,17 +210,12 @@ void ProveedorManager::actualizar(){
      }
      case 5:{
         string dni;
-        dni = cargarCadena();
 
-        if(!validarDNI(dni)){
-            do{
-                cout << "Error, ingrese un dni correcto: ";
+        do{
+            cout << "Ingrese el nuevo DNI: ";
+            dni = cargarCadena();
+        }while(!validarDNI(dni));
 
-                dni = cargarCadena();
-                validarDNI(dni);
-
-            }while(validarDNI(dni));
-        }
 
         reg.setDni(dni);
         _repo.guardar(pos, reg);

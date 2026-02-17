@@ -48,18 +48,16 @@ void AlmacenManager::cargarProducto(){
 
     }while(idCat <= 0);
 
-    cout << "Ingrese el nombre del producto: ";
-    nombre = cargarCadena();
-
     do{
-        cout << "Ingrese el precio: ";
-        cin >> precio;
-    }while(precio <= 0);
+        cout << "Ingrese el nombre del producto: ";
+        nombre = cargarCadena();
+    }while(!validarCadena(nombre));
 
-    do{
-        cout << "Ingrese el stock: ";
-        cin >> stock;
-    }while(stock <= 0);
+    cout << "Ingrese el precio: ";
+    precio = pedirFlotanteValido();
+
+    cout << "Ingrese el stock: ";
+    stock = pedirEnteroValido();
 
     if(_repo.guardar(Producto(idProd, idProv, idCat, nombre, precio, stock))){
         cout << "NUEVO PRODUCTO GUARDADO";
@@ -76,7 +74,7 @@ void AlmacenManager::listarPorCategoria(){
     _categoriaManager.mostrar();
 
     cout << "INGRESE LA CATEGORIA QUE DESEE VER: (0 - Para salir)";
-    cin >> idCategoria;
+    idCategoria = pedirEnteroValido();
 
     if(idCategoria <= 0){
         return;
@@ -240,7 +238,7 @@ void AlmacenManager::rellenarStock(int id, int cantidad){
 void AlmacenManager::eliminarProducto(){
   int id, pos;
   cout << "Ingrese el ID del producto: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
   if(_repo.eliminar(pos)){

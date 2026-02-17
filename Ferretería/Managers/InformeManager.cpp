@@ -11,7 +11,7 @@ void InformeManager::recaudacionMensual(){
     int anio;
 
     cout << "Ingrese el anio: ";
-    cin >> anio;
+    anio = pedirEnteroValido();
 
     _ventaManager.recaudacionMensual(anio);
 }
@@ -20,12 +20,12 @@ void InformeManager::recaudacionMensualCategoria(){
     int anio, idCat;
 
     cout << "Ingrese el anio: ";
-    cin >> anio;
+    anio = pedirEnteroValido();
 
     do{
         cout << "Ingrese la categoria (0 - Para mostrar categorias)" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();
@@ -46,12 +46,12 @@ void InformeManager::recaudacionAnualCategoria(){
     int anio, idCat;
 
     cout << "Ingrese el anio: ";
-    cin >> anio;
+    anio = pedirEnteroValido();
 
     do{
         cout << "Ingrese la categoria (0 - Para mostrar categorias)" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();
@@ -69,7 +69,7 @@ void InformeManager::numeroVentasAnualCategoria(){
     do{
         cout << "Ingrese la categoria (0 - Para mostrar categorias)" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();
@@ -85,12 +85,11 @@ void InformeManager::numeroVentasMensualCategoria(){
     int anio, idCat;
 
     cout << "Ingrese el anio: ";
-    cin >> anio;
-
+    anio = pedirEnteroValido();
     do{
         cout << "Ingrese la categoria (0 - Para mostrar categorias)" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();
@@ -108,7 +107,7 @@ void InformeManager::numeroProductosVendidosCategoria(){
     do{
         cout << "Ingrese la categoria (0 - Para mostrar categorias)" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();

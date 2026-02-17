@@ -31,7 +31,7 @@ int CompraManager::cargar() {
 
     do {
         cout << "Ingrese el ID de Empleado ('0' - para salir): ";
-        cin >> idEmpleado;
+        idEmpleado = pedirEnteroValido();
 
         if (idEmpleado == 0) {
             return 0;
@@ -116,8 +116,9 @@ void CompraManager::mostrar(int id){
 
 void CompraManager::modificar(){
   int id, pos, opc;
+
   cout << "Ingrese el ID de la compra: ";
-  cin >> id;
+  id = pedirEnteroValido();
 
   pos = _repo.buscarID(id);
 
@@ -134,7 +135,7 @@ void CompraManager::modificar(){
   cout << " 2 - FECHA" << endl;
   cout << " 3 - HORA" << endl;
   cout << " Opcion: ";
-  cin >> opc;
+  opc = pedirEnteroValido();
 
   switch(opc){
     case 0:{
@@ -153,7 +154,7 @@ void CompraManager::modificar(){
             int opc;
 
             cout << " Ingrese el ID del cliente (0 - salir)" << endl;
-            cin >> opc;
+            opc = pedirEnteroValido();
 
             if(opc <= 0){
                 return;
@@ -191,16 +192,17 @@ void CompraManager::modificar(){
 
         int dia, mes, anio;
         Fecha fecha;
+
         do{
             system("cls");
             cout << "Ingrese el dia de hoy: ";
-            cin >> dia;
+            dia = pedirEnteroValido();
 
             cout << "Ingrese el mes actual: ";
-            cin >> mes;
+            mes = pedirEnteroValido();
 
             cout << "Ingrese el anio actual: ";
-            cin >> anio;
+            anio = pedirEnteroValido();
         }while(!fecha.validarFecha(dia, mes, anio));
 
         reg.setFechaEmision(fecha);
@@ -223,7 +225,7 @@ void CompraManager::eliminar(){
 
     cout << "---- Eliminar compra ----"<<endl;
     cout << "Ingrese ID de la compra: ";
-    cin >> id;
+    id = pedirEnteroValido();
 
     pos = _repo.buscarID(id);
 
