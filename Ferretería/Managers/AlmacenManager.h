@@ -34,6 +34,9 @@ class AlmacenManager{
 
     bool validarID(int id);
 
+    void crearBackup();
+    void cargarBackup();
+
   protected:
     void mostrarLista(const Producto &reg);
   private:

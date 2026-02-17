@@ -38,6 +38,9 @@ class VentaManager
     void modificar();
     void eliminar();
 
+    void crearBackup();
+    void cargarBackup();
+
     void mostrarVentaCompleta(const Transaccion &reg);
   private:
     DetalleVentaManager _detalleManager;

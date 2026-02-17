@@ -136,3 +136,49 @@ bool ProveedorArchivo::eliminar(int pos){
   return guardar(pos, reg);
 }
 
+void ProveedorArchivo::crearBackup(){
+    Proveedor obj;
+    FILE* p = fopen("./backups/Proveedores.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE PROVEEDORES";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP DE PROVEEDORES CREADO" << endl;
+}
+
+void ProveedorArchivo::cargarBackup(){
+    Proveedor obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE PROVEEDORES";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Proveedores.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP PROVEEDORES";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Proveedor), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD PROVEEDORES RESTAURADA CON EXITO" << endl;
+}
+

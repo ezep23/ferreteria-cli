@@ -240,6 +240,13 @@ void DetalleCompraManager::mostrar(int id){
 }
 */
 
+void DetalleCompraManager::crearBackup(){
+    _repo.crearBackup();
+}
+void DetalleCompraManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void DetalleCompraManager::eliminar(){
     int id, pos;
     cout << "Ingrese el ID de la compra: ";

@@ -22,6 +22,9 @@ class ProveedorManager{
     bool existeProveedor(int id);
     int obtenerNumeroProximoID();
 
+    void crearBackup();
+    void cargarBackup();
+
     void mostrar(int idEmpresa);
   protected:
     void mostrarLista(const Proveedor &reg);

@@ -17,6 +17,8 @@ class EmpresaArchivo{
     int getCantidadRegistros();
     int getNuevoID();
 
+    void crearBackup();
+    void cargarBackup();
   private:
     std::string _nombreArchivo;
 };

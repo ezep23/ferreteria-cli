@@ -297,6 +297,13 @@ void DetalleVentaManager::eliminar(){
   return;
 }
 
+void DetalleVentaManager::crearBackup(){
+    _repo.crearBackup();
+}
+void DetalleVentaManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void DetalleVentaManager::mostrarDetalleCompleto(const DetalleTransaccion &reg){
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getId() << endl;

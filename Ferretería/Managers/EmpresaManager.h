@@ -20,6 +20,9 @@ class EmpresaManager{
     void mostrarNombreEmpresa(int id);
     bool validarEmpresaExiste(int id);
 
+    void crearBackup();
+    void cargarBackup();
+
   protected:
     void mostrarLista(const Empresa &reg);
   private:

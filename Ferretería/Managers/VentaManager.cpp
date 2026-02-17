@@ -759,6 +759,13 @@ void VentaManager::mostrarOrdenadasPrimeraVenta(){
     delete[] vVenta;
 }
 
+void VentaManager::crearBackup(){
+    _repo.crearBackup();
+}
+void VentaManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void VentaManager::mostrarVentaCompleta(const Transaccion &reg){
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;

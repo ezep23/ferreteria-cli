@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+#include "../Utils.h"
 #include "VentasManager.h"
 
 VentasManager::VentasManager(){

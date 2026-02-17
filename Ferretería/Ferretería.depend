@@ -74,19 +74,19 @@
 	"Fecha.h"
 	"Hora.h"
 
-1769445857 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\ventaarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\ventaarchivo.cpp
 	<iostream>
 	"VentaArchivo.h"
 
-1769979016 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\ventaarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\ventaarchivo.h
 	<string>
 	"../Entidades/Transaccion.h"
 
-1770661292 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\appmenu.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\appmenu.cpp
 	<iostream>
 	"AppMenu.h"
 
-1770661292 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\appmenu.h
+1771300123 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\appmenu.h
 	"Menu.h"
 	"VentaMenu.h"
 	"CompraMenu.h"
@@ -97,6 +97,7 @@
 	"CategoriaMenu.h"
 	"EmpresaMenu.h"
 	"InformeMenu.h"
+	"BackupMenu.h"
 
 1769306252 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\menu.h
 
@@ -104,14 +105,14 @@
 	"Menu.h"
 	"../Managers/VentasManager.h"
 
-1771271181 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.h
+1771332042 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.h
 	"../Archivos/VentaArchivo.h"
 	"../Archivos/ClienteArchivo.h"
 	"ClienteManager.h"
 	"EmpleadoManager.h"
 	"DetalleVentaManager.h"
 
-1770559519 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\clientearchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\clientearchivo.h
 	<string>
 	"../Entidades/Cliente.h"
 
@@ -123,32 +124,34 @@
 	<iostream>
 	"VentaMenu.h"
 
-1771271341 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.cpp
+1771332042 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/Cliente.h"
 	"../Entidades/Transaccion.h"
 	"VentaManager.h"
 
-1771295588 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.h
+1771298458 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.h
 	<string>
 
-1770569364 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.cpp
+1771299056 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\utils.cpp
 	<iostream>
+	<cctype>
+	<limits>
 	"utils.h"
 
-1769639175 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\clientearchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\clientearchivo.cpp
 	<iostream>
 	"ClienteArchivo.h"
 
-1771265417 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.cpp
 	<iostream>
 	<string.h>
 	"ClienteManager.h"
 	"../Entidades/Cliente.h"
 	"../Utils.h"
 
-1771255145 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.h
 	"../Archivos/ClienteArchivo.h"
 
 1769473282 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\clientemenu.h
@@ -159,11 +162,11 @@
 	<iostream>
 	"ClienteMenu.h"
 
-1769639175 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\proveedorarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\proveedorarchivo.cpp
 	<iostream>
 	"ProveedorArchivo.h"
 
-1769639176 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\proveedorarchivo.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\proveedorarchivo.h
 	<string>
 	"../Entidades/Proveedor.h"
 
@@ -171,11 +174,11 @@
 	"Menu.h"
 	"../Managers/ProveedorManager.h"
 
-1771255142 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.h
 	"../Archivos/ProveedorArchivo.h"
 	"EmpresaManager.h"
 
-1771265417 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.cpp
 	<iostream>
 	"ProveedorManager.h"
 	"../Entidades/Proveedor.h"
@@ -192,7 +195,7 @@
 1769556386 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\productomanager.h
 	"../Archivos/ProductoArchivo.h"
 
-1769639175 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\productoarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\productoarchivo.h
 	<string>
 	"../Entidades/Producto.h"
 
@@ -200,15 +203,15 @@
 	<string>
 	"Categoria.h"
 
-1769639175 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\productoarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\productoarchivo.cpp
 	<iostream>
 	"ProductoArchivo.h"
 
-1769639175 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\categoriaarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\categoriaarchivo.cpp
 	<iostream>
 	"CategoriaArchivo.h"
 
-1769639176 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\categoriaarchivo.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\categoriaarchivo.h
 	<string>
 	"../Entidades/Categoria.h"
 
@@ -222,14 +225,14 @@
 	<iostream>
 	"ProductoMenu.h"
 
-1770660061 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\categoriamanager.cpp
+1771332043 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\categoriamanager.cpp
 	<iostream>
 	"CategoriaManager.h"
 	"../Entidades/Categoria.h"
 	<string.h>
 	"../Utils.h"
 
-1770662470 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\categoriamanager.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\categoriamanager.h
 	<string>
 	"../Archivos/CategoriaArchivo.h"
 
@@ -251,14 +254,14 @@
 	"Menu.h"
 	"../Managers/EmpresaManager.h"
 
-1771276121 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.h
 	"../Archivos/EmpresaArchivo.h"
 
-1769639176 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empresaarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empresaarchivo.h
 	<string>
 	"../Entidades/Empresa.h"
 
-1769639176 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empresaarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empresaarchivo.cpp
 	<iostream>
 	"EmpresaArchivo.h"
 
@@ -266,27 +269,27 @@
 	<iostream>
 	"EmpresaMenu.h"
 
-1771276198 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.cpp
+1771332043 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empresamanager.cpp
 	<iostream>
 	"EmpresaManager.h"
 	"../Entidades/Empresa.h"
 	"../Utils.h"
 
-1769950819 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detalleventaarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detalleventaarchivo.cpp
 	<iostream>
 	"DetalleVentaArchivo.h"
 
-1769951064 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detalleventaarchivo.h
+1771332042 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detalleventaarchivo.h
 	<string>
 	"../Entidades/DetalleTransaccion.h"
 
-1771268361 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.cpp
+1771332043 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.cpp
 	<iostream>
 	"AlmacenManager.h"
 	"../Entidades/Producto.h"
 	"../Utils.h"
 
-1771268361 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.h
+1771332042 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.h
 	"../Archivos/ProductoArchivo.h"
 	"ProveedorManager.h"
 	"CategoriaManager.h"
@@ -299,21 +302,22 @@
 	<iostream>
 	"AlmacenMenu.h"
 
-1771181639 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detalleventamanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detalleventamanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/DetalleTransaccion.h"
 	"DetalleVentaManager.h"
 
-1771097158 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detalleventamanager.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detalleventamanager.h
 	"../Archivos/DetalleVentaArchivo.h"
 	"AlmacenManager.h"
 
-1771273865 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.cpp
+1771332805 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.cpp
 	<iostream>
+	"../Utils.h"
 	"VentasManager.h"
 
-1771273406 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.h
+1771332805 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventasmanager.h
 	"VentaManager.h"
 	"DetalleVentaManager.h"
 
@@ -321,47 +325,48 @@
 	"Menu.h"
 	"../Managers/ComprasManager.h"
 
-1771273864 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\comprasmanager.h
+1771332805 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\comprasmanager.h
 	"CompraManager.h"
 	"DetalleCompraManager.h"
 
-1771273865 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.h
 	"../Archivos/CompraArchivo.h"
 	"../Archivos/EmpleadoArchivo.h"
 	"EmpleadoManager.h"
 
-1770465993 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\compraarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\compraarchivo.h
 	<string>
 	"../Entidades/Transaccion.h"
 
-1770465994 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detallecompramanager.h
+1771332044 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detallecompramanager.h
 	"../Archivos/DetalleCompraArchivo.h"
 	"AlmacenManager.h"
 
-1770465991 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detallecompraarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detallecompraarchivo.h
 	<string>
 	"../Entidades/DetalleTransaccion.h"
 
-1770465992 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\compraarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\compraarchivo.cpp
 	<iostream>
 	"CompraArchivo.h"
 
-1770465990 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detallecompraarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\detallecompraarchivo.cpp
 	<iostream>
 	"DetalleCompraArchivo.h"
 
-1771273888 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/Empleado.h"
 	"../Entidades/Transaccion.h"
 	"CompraManager.h"
 
-1771273865 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\comprasmanager.cpp
+1771332805 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\comprasmanager.cpp
 	<iostream>
+	"../Utils.h"
 	"ComprasManager.h"
 
-1770496470 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detallecompramanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\detallecompramanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/DetalleTransaccion.h"
@@ -371,11 +376,11 @@
 	<iostream>
 	"CompraMenu.h"
 
-1770559519 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empleadoarchivo.cpp
+1771332104 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empleadoarchivo.cpp
 	<iostream>
 	"EmpleadoArchivo.h"
 
-1770559520 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empleadoarchivo.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\archivos\empleadoarchivo.h
 	<string>
 	"../Entidades/Empleado.h"
 
@@ -391,10 +396,10 @@
 	"Menu.h"
 	"../Managers/EmpleadoManager.h"
 
-1771255137 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.h
 	"../Archivos/EmpleadoArchivo.h"
 
-1771265417 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.cpp
+1771332044 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.cpp
 	<iostream>
 	"EmpleadoManager.h"
 	"../Entidades/Empleado.h"
@@ -408,7 +413,7 @@
 	"Menu.h"
 	"../Managers/InformeManager.h"
 
-1771181639 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\informemanager.h
+1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\informemanager.h
 	"VentaManager.h"
 	"AlmacenManager.h"
 	"CategoriaManager.h"
@@ -416,11 +421,36 @@
 	"DetalleVentaManager.h"
 	"ClienteManager.h"
 
-1771181639 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\informemanager.cpp
+1771298870 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\informemanager.cpp
 	<iostream>
+	"../Utils.h"
 	"InformeManager.h"
 
 1771182726 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\informemenu.cpp
 	<iostream>
 	"InformeMenu.h"
+
+1771300121 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\backupmenu.h
+	"Menu.h"
+	"../Managers/BackupManager.h"
+
+1771334006 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\backupmanager.h
+	"AlmacenManager.h"
+	"CategoriaManager.h"
+	"ClienteManager.h"
+	"CompraManager.h"
+	"DetalleCompraManager.h"
+	"VentaManager.h"
+	"DetalleVentaManager.h"
+	"EmpleadoManager.h"
+	"EmpresaManager.h"
+	"ProveedorManager.h"
+
+1771334005 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\backupmanager.cpp
+	<iostream>
+	"BackupManager.h"
+
+1771300120 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\backupmenu.cpp
+	<iostream>
+	"BackupMenu.h"
 

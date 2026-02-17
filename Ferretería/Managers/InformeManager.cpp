@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+#include "../Utils.h"
 #include "InformeManager.h"
 
 InformeManager::InformeManager(){

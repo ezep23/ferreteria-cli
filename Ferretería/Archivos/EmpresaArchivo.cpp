@@ -135,3 +135,49 @@ bool EmpresaArchivo::eliminar(int pos){
 
   return guardar(pos, reg);
 }
+
+void EmpresaArchivo::crearBackup(){
+    Empresa obj;
+    FILE* p = fopen("./backups/Empresas.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE EMPRESAS";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP DE EMPRESAS CREADO" << endl;
+}
+
+void EmpresaArchivo::cargarBackup(){
+    Empresa obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE EMPRESAS";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Empresas.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP EMPRESAS";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Empresa), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD EMPRESAS RESTAURADA CON EXITO" << endl;
+}

@@ -68,8 +68,8 @@ void ProveedorManager::cargar(){
 
   do{
     cout << "Ingrese telefono: ";
-    telefono = cargarCadena();
-  }while(!validarCadena(telefono));
+    tel = cargarCadena();
+  }while(!validarCadena(tel));
 
   do{
     cout << "Ingrese email: ";
@@ -384,6 +384,12 @@ void ProveedorManager::mostrarApellidosZA(){
     delete[] vProveedor;
 }
 
+void ProveedorManager::crearBackup(){
+    _repo.crearBackup();
+}
+void ProveedorManager::cargarBackup(){
+    _repo.cargarBackup();
+}
 
 void ProveedorManager::mostrarLista(const Proveedor &reg){
   cout << "ID: " << reg.getId() << endl;

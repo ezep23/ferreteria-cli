@@ -20,6 +20,9 @@ class EmpleadoManager{
     bool existeRegistro(int id);
     int obtenerNumeroProximoID();
 
+    void crearBackup();
+    void cargarBackup();
+
   protected:
     void mostrarLista(const Empleado &reg);
   private:

@@ -135,3 +135,49 @@ bool ClienteArchivo::eliminar(int pos){
 
   return guardar(pos, reg);
 }
+
+void ClienteArchivo::crearBackup(){
+    Cliente obj;
+    FILE* p = fopen("./backups/Clientes.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE CLIENTES";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP CLIENTES CREADO" << endl;
+}
+
+void ClienteArchivo::cargarBackup(){
+    Cliente obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE CLIENTES";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Clientes.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP CLIENTES";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Cliente), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD CLIENTES RESTAURADA CON EXITO" << endl;
+}

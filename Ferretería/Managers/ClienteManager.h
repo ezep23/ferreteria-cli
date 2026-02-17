@@ -19,6 +19,9 @@ class ClienteManager{
     bool existeRegistro(int id);
     void mostrarClientesMasCompras();
 
+    void crearBackup();
+    void cargarBackup();
+
   protected:
     void mostrarLista(const Cliente &reg);
   private:

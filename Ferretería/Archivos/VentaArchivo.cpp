@@ -146,3 +146,48 @@ bool VentaArchivo::eliminar(int pos){
   return guardar(pos, registro);
 }
 
+void VentaArchivo::crearBackup(){
+    Transaccion obj;
+    FILE* p = fopen("./backups/Ventas.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE VENTAS";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP DE VENTAS CREADO" << endl;
+}
+
+void VentaArchivo::cargarBackup(){
+    Transaccion obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE VENTAS";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Ventas.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP VENTAS";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Transaccion), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD VENTAS RESTAURADA CON EXITO" << endl;
+}

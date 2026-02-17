@@ -76,6 +76,8 @@
 		<Unit filename="Entidades/Transaccion.h" />
 		<Unit filename="Managers/AlmacenManager.cpp" />
 		<Unit filename="Managers/AlmacenManager.h" />
+		<Unit filename="Managers/BackupManager.cpp" />
+		<Unit filename="Managers/BackupManager.h" />
 		<Unit filename="Managers/CategoriaManager.cpp" />
 		<Unit filename="Managers/CategoriaManager.h" />
 		<Unit filename="Managers/ClienteManager.cpp" />
@@ -104,6 +106,8 @@
 		<Unit filename="Menus/AlmacenMenu.h" />
 		<Unit filename="Menus/AppMenu.cpp" />
 		<Unit filename="Menus/AppMenu.h" />
+		<Unit filename="Menus/BackupMenu.cpp" />
+		<Unit filename="Menus/BackupMenu.h" />
 		<Unit filename="Menus/CategoriaMenu.cpp" />
 		<Unit filename="Menus/CategoriaMenu.h" />
 		<Unit filename="Menus/ClienteMenu.cpp" />

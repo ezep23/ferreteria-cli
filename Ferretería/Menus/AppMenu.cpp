@@ -4,7 +4,7 @@ using namespace std;
 #include "AppMenu.h"
 
 AppMenu::AppMenu(){
-  _cantidadOpciones = 9;
+  _cantidadOpciones = 10;
 }
 
 void AppMenu::mostrarOpciones(){
@@ -22,6 +22,7 @@ void AppMenu::mostrarOpciones(){
   cout << endl;
   cout << " 8 - CATEGORIAS" <<endl;
   cout << " 9 - EMPRESAS" << endl;
+  cout << " 10 - BACKUPS" << endl;
   cout << endl;
   cout << "----------------------" << endl;
   cout << endl;
@@ -58,6 +59,9 @@ void AppMenu::ejecutarOpcion(int opcion){
     break;
   case 9:
     _empresaMenu.mostrar();
+    break;
+  case 10:
+    _backupMenu.mostrar();
     break;
   }
 }

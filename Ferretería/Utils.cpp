@@ -93,19 +93,19 @@ int pedirEnteroValido(){
     int numero;
 
     while (true) {
-        if (cin >> numero) {
+        if (std::cin >> numero) {
             return numero;
         } else {
             // Si falla (porque ingresaron letras, por ejemplo):
-            cout << "Error: Entrada invalida. Solo se aceptan numeros enteros." << endl;
+            std::cout << "Error: Entrada invalida. Solo se aceptan numeros enteros." << std::endl;
 
             // 1. Limpiamos el estado de error de cin
-            cin.clear();
+            std::cin.clear();
 
             // 2. Descartamos lo que sea que haya escrito el usuario hasta el salto de linea
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            cout << "Intentalo de nuevo: ";
+            std::cout << "Intentalo de nuevo: ";
         }
     }
 }
@@ -114,16 +114,16 @@ float pedirFlotanteValido() {
     float numero;
 
     while (true) {
-        if (cin >> numero) {
+        if (std::cin >> numero) {
             return numero;
         } else {
             // Si falla (ingresaron letras o símbolos inválidos):
-            cout << "Error: Entrada invalida. Solo se aceptan numeros (usa el punto '.' para decimales)." << endl;
+            std::cout << "Error: Entrada invalida. Solo se aceptan numeros (usa el punto '.' para decimales)." << std::endl;
 
-            cin.clear(); // Limpiamos el estado de error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Barremos la basura del teclado
+            std::cin.clear(); // Limpiamos el estado de error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Barremos la basura del teclado
 
-            cout << "Intentalo de nuevo: ";
+            std::cout << "Intentalo de nuevo: ";
         }
     }
 }

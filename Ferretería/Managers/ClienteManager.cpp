@@ -324,6 +324,13 @@ void ClienteManager::mostrar(int id){
     cout << "Cliente asignado: " << _repo.leer(pos).getNombre() << " " << _repo.leer(pos).getNombre() << " - " << _repo.leer(pos).getDni() << endl;
 }
 
+void ClienteManager::crearBackup(){
+    _repo.crearBackup();
+}
+void ClienteManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void ClienteManager::mostrarLista(const Cliente &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "DNI: " << reg.getDni() << endl;

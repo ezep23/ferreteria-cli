@@ -14,6 +14,9 @@ class CategoriaManager{
 
     bool existeCategoria(int id);
 
+    void crearBackup();
+    void cargarBackup();
+
   protected:
     void mostrarLista(const Categoria &reg);
   private:

@@ -11,6 +11,7 @@
 #include "CategoriaMenu.h"
 #include "EmpresaMenu.h"
 #include "InformeMenu.h"
+#include "BackupMenu.h"
 
 class AppMenu: public Menu{
  public:
@@ -29,4 +30,5 @@ class AppMenu: public Menu{
     CategoriaMenu _categoriaMenu;
     EmpresaMenu _empresaMenu;
     InformeMenu _informeMenu;
+    BackupMenu _backupMenu;
 };

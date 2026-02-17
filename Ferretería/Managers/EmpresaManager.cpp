@@ -219,6 +219,13 @@ void EmpresaManager::mostrarNombreEmpresa(int id){
     cout << "ID: " << _repo.leer(pos).getId() <<  " - " <<  "NOMBRE: " << _repo.leer(pos).getNombreComercial() << endl;
 }
 
+void EmpresaManager::crearBackup(){
+    _repo.crearBackup();
+}
+void EmpresaManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void EmpresaManager::mostrarLista(const Empresa &reg){
   cout << "ID: " << reg.getId() << endl;
   cout << "Razon social: " << reg.getRazonSocial() << endl;

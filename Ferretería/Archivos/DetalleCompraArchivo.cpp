@@ -145,3 +145,49 @@ bool DetalleCompraArchivo::eliminar(int pos){
 
   return guardar(pos, registro);
 }
+
+void DetalleCompraArchivo::crearBackup(){
+    DetalleTransaccion obj;
+    FILE* p = fopen("./backups/DetallesCompras.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE DETALLES DE COMPRAS";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP DETALLES DE COMPRAS CREADO" << endl;
+}
+
+void DetalleCompraArchivo::cargarBackup(){
+    DetalleTransaccion obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE DETALLES DE COMPRAS";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/DetallesCompras.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP DE DETALLES DE COMPRAS";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(DetalleTransaccion), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD DE DETALLES DE COMPRAS RESTAURADA CON EXITO" << endl;
+}

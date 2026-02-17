@@ -23,6 +23,9 @@ class DetalleVentaManager
     int obtenerCantidadCategoria(int idTrans, int idCat);
     int obtenerCantidadProductos(int idCliente);
 
+    void crearBackup();
+    void cargarBackup();
+
     void mostrarDetalleCompleto(const DetalleTransaccion &reg);
   private:
     DetalleVentaArchivo _repo;

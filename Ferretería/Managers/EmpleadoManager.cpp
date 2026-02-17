@@ -41,8 +41,8 @@ void EmpleadoManager::cargar(){
 
   do{
     cout << "Ingrese telefono: ";
-    telefono = cargarCadena();
-  }while(!validarCadena(telefono));
+    tel = cargarCadena();
+  }while(!validarCadena(tel));
 
   do{
     cout << "Ingrese email: ";
@@ -123,7 +123,7 @@ void EmpleadoManager::actualizar(){
         string nombre;
 
         do{
-            cout << "Ingrese el nuevo nombre: "
+            cout << "Ingrese el nuevo nombre: ";
             nombre = cargarCadena();
         } while (!validarCadena(nombre));
 
@@ -138,7 +138,7 @@ void EmpleadoManager::actualizar(){
         string apellido;
 
         do{
-            cout << "Ingrese el nuevo apellido: "
+            cout << "Ingrese el nuevo apellido: ";
             apellido = cargarCadena();
         } while (!validarCadena(apellido));
 
@@ -152,7 +152,7 @@ void EmpleadoManager::actualizar(){
         string tel;
 
         do{
-            cout << "Ingrese el nuevo telefono: "
+            cout << "Ingrese el nuevo telefono: ";
             tel = cargarCadena();
         } while (!validarCadena(tel));
 
@@ -166,7 +166,7 @@ void EmpleadoManager::actualizar(){
         string email;
 
         do{
-            cout << "Ingrese el nuevo email: "
+            cout << "Ingrese el nuevo email: ";
             email = cargarCadena();
         } while (!validarCadena(email));
 
@@ -181,7 +181,7 @@ void EmpleadoManager::actualizar(){
 
         do{
             cout << "Ingrese el nuevo DNI: ";
-            dni = cargarCadena)();
+            dni = cargarCadena();
         }while(!validarDNI(dni));
 
         reg.setDni(dni);
@@ -373,6 +373,13 @@ void EmpleadoManager::mostrarApellidosZA(){
     }
 
     delete[] vEmpleado;
+}
+
+void EmpleadoManager::crearBackup(){
+    _repo.crearBackup();
+}
+void EmpleadoManager::cargarBackup(){
+    _repo.cargarBackup();
 }
 
 void EmpleadoManager::mostrarLista(const Empleado &reg){

@@ -572,3 +572,10 @@ void AlmacenManager::mostrarLista(const Producto &reg){
   cout << "------------" <<endl;
 }
 
+void AlmacenManager::crearBackup(){
+    _repo.crearBackup();
+}
+void AlmacenManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+

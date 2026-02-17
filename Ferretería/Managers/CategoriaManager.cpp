@@ -132,6 +132,12 @@ bool CategoriaManager::existeCategoria(int id){
   return false;
 }
 
+void CategoriaManager::crearBackup(){
+    _repo.crearBackup();
+}
+void CategoriaManager::cargarBackup(){
+    _repo.cargarBackup();
+}
 
 void CategoriaManager::mostrarLista(const Categoria &reg){
   cout << "ID: " << reg.getId() << endl;

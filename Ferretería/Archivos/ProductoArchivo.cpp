@@ -135,3 +135,51 @@ bool ProductoArchivo::eliminar(int pos){
 
   return guardar(pos, reg);
 }
+
+void ProductoArchivo::crearBackup(){
+    Producto obj;
+    FILE* p = fopen("./backups/Productos.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE PRODUCTOS";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP DE PRODUCTOS CREADO" << endl;
+}
+
+void ProductoArchivo::cargarBackup(){
+    Producto obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE PRODUCTOS";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Productos.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP PRODUCTOS";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Producto), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD PRODUCTOS RESTAURADA CON EXITO" << endl;
+}
+
+

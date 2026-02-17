@@ -422,6 +422,13 @@ void CompraManager::mostrarOrdenadasPrimeraCompra(){
     delete[] vCompra;
 }
 
+void CompraManager::crearBackup(){
+    _repo.crearBackup();
+}
+void CompraManager::cargarBackup(){
+    _repo.cargarBackup();
+}
+
 void CompraManager::mostrarCompraCompleta(const Transaccion &reg){
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;

@@ -26,6 +26,9 @@ class CompraManager
     void modificar();
     void eliminar();
 
+    void crearBackup();
+    void cargarBackup();
+
     void mostrarCompraCompleta(const Transaccion &reg);
   private:
     EmpleadoManager _empleadoManager;

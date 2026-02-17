@@ -19,6 +19,9 @@ class DetalleCompraManager
     void modificar();
     void eliminar();
 
+    void crearBackup();
+    void cargarBackup();
+
     void mostrarDetalleCompleto(const DetalleTransaccion &reg);
   private:
     DetalleCompraArchivo _repo;

@@ -135,3 +135,49 @@ bool CategoriaArchivo::eliminar(int pos){
 
   return guardar(pos, reg);
 }
+
+void CategoriaArchivo::crearBackup(){
+    Categoria obj;
+    FILE* p = fopen("./backups/Categorias.bkp", "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUEDE CREAR EL BACKUP DE CATEGORIAS";
+        return;
+    }
+
+    int cantidad = getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        obj = leer(i);
+        fwrite(&obj, sizeof obj, 1, p);
+    }
+    fclose(p);
+
+    system("cls");
+    cout << "BACKUP CATEGORIAS CREADO" << endl;
+}
+
+void CategoriaArchivo::cargarBackup(){
+    Categoria obj;
+
+    FILE* p = fopen(_nombreArchivo.c_str(), "wb");
+
+    if (p == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE CATEGORIAS";
+        return;
+    }
+    FILE* pBackup = fopen("./backups/Categorias.bkp", "rb");
+
+    if (pBackup == nullptr){
+        cout << "NO SE PUDO ABRIR O NO EXISTE EL ARCHIVO DE BACKUP CATEGORIAS";
+        return;
+    }
+
+    while (fread(&obj, sizeof obj, 1, pBackup) == 1) {
+        fwrite(&obj, sizeof(Categoria), 1, p);
+    }
+
+    fclose(p);
+    fclose(pBackup);
+    cout << " # COPIA DE SEGURIDAD CATEGORIAS RESTAURADA CON EXITO" << endl;
+}
