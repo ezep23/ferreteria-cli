@@ -82,7 +82,41 @@ bool validarCadenaEspacios(std::string cadena){
 
     for (int i = 0; i < cadena.size(); i++) {
         char c = cadena[i];
-        if (!isalpha(c)) {
+        if (!isalpha(c) && c != ' ' && c != '.') {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool validarTelefonoString(std::string cadena){
+    if (cadena.empty()){
+        return false;
+    }
+
+    bool tieneNumero = false;
+
+    for (int i = 0; i < cadena.size(); i++) {
+        char c = cadena[i];
+
+        if (isdigit(c)) {
+            tieneNumero = true;
+        }else if (c != ' ' && c != '-' && c != '+') {
+            return false;
+        }
+    }
+
+    return tieneNumero;
+}
+
+bool validarEmailString(std::string cadena){
+    if (cadena.empty()){
+        return false;
+    }
+
+    for (int i = 0; i < cadena.size(); i++) {
+        char c = cadena[i];
+        if (!isalpha(c) && c != '@' && c != '.') {
             return false;
         }
     }

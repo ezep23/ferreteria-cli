@@ -42,12 +42,12 @@ void EmpleadoManager::cargar(){
   do{
     cout << "Ingrese telefono: ";
     tel = cargarCadena();
-  }while(!validarCadena(tel));
+  }while(!validarTelefonoString(tel));
 
   do{
     cout << "Ingrese email: ";
     email = cargarCadena();
-  }while(!validarCadena(email));
+  }while(!validarEmailString(email));
 
   if(_repo.guardar(Empleado(nombre, apellido, tel, email, dni, id))){
     cout << "Se agrego correctamente" << endl;
@@ -154,7 +154,7 @@ void EmpleadoManager::actualizar(){
         do{
             cout << "Ingrese el nuevo telefono: ";
             tel = cargarCadena();
-        } while (!validarCadena(tel));
+        } while (!validarTelefonoString(tel));
 
         reg.setTelefono(tel);
         _repo.guardar(pos, reg);
@@ -168,7 +168,7 @@ void EmpleadoManager::actualizar(){
         do{
             cout << "Ingrese el nuevo email: ";
             email = cargarCadena();
-        } while (!validarCadena(email));
+        } while (!validarEmailString(email));
 
         reg.setEmail(email);
         _repo.guardar(pos, reg);
@@ -383,12 +383,13 @@ void EmpleadoManager::cargarBackup(){
 }
 
 void EmpleadoManager::mostrarLista(const Empleado &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "DNI: " << reg.getDni() << endl;
   cout << "Nombre: "<< reg.getNombre() << endl;
   cout << "Apellido: " << reg.getApellido() << endl;
   cout << "Telefono: " << reg.getTelefono() << endl;
   cout << "Email: " << reg.getEmail() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }
 

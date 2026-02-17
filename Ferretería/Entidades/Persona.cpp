@@ -26,10 +26,10 @@ void Persona::setApellido(string apellido){
     strncpy(_apellido, apellido.c_str(), 19);
 }
 void Persona::setTelefono(string telefono){
-    strncpy(_telefono, telefono.c_str(), 9);
+    strncpy(_telefono, telefono.c_str(), 17);
 }
 void Persona::setEmail(string email){
-    strncpy(_email, email.c_str(), 24);
+    strncpy(_email, email.c_str(), 34);
 }
 void Persona::setDni(string dni){
     strncpy(_dni, dni.c_str(), 7);

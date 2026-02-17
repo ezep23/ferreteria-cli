@@ -100,7 +100,8 @@ void EmpresaManager::actualizar(){
         do{
             cout << "Ingrese la nueva razon social: ";
             razonSocial = cargarCadena();
-        }while(!validarCadena(razonSocial));
+
+        }while(!validarCadenaEspacios(razonSocial));
 
         reg.setRazonSocial(razonSocial);
         _repo.guardar(pos, reg);
@@ -115,7 +116,7 @@ void EmpresaManager::actualizar(){
         do{
             cout << "Ingrese el nuevo nombre comercial: ";
             nombreComercial = cargarCadena();
-        }while(!validarCadena(nombreComercial));
+        }while(!validarCadenaEspacios(nombreComercial));
 
         reg.setNombreComercial(nombreComercial);
         _repo.guardar(pos, reg);
@@ -227,8 +228,9 @@ void EmpresaManager::cargarBackup(){
 }
 
 void EmpresaManager::mostrarLista(const Empresa &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "Razon social: " << reg.getRazonSocial() << endl;
   cout << "Nombre comercial: " << reg.getNombreComercial() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }

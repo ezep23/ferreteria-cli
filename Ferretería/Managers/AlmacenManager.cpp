@@ -22,7 +22,7 @@ void AlmacenManager::cargarProducto(){
     do{
         cout << "Ingrese el ID de proveedor (0 - Listar)" << endl;
         cout << "Opcion: ";
-        cin >> idProv;
+        idProv = pedirEnteroValido();
         cout << endl;
 
         if(idProv == 0){
@@ -36,7 +36,7 @@ void AlmacenManager::cargarProducto(){
     do{
         cout << "Ingrese el ID de Categoria (0 - Listar)"<< endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
         if(idCat == 0){
             _categoriaManager.mostrar();
@@ -44,7 +44,7 @@ void AlmacenManager::cargarProducto(){
 
         cout << "Ingrese el ID de Categoria" << endl;
         cout << "Opcion: ";
-        cin >> idCat;
+        idCat = pedirEnteroValido();
 
     }while(idCat <= 0);
 
@@ -303,7 +303,7 @@ void AlmacenManager::actualizarProducto(){
 
      }
      case 2:{
-        float precio
+        float precio;
 
         cout << "Ingrese el nuevo precio: ";
         precio = pedirFlotanteValido();
@@ -322,13 +322,11 @@ void AlmacenManager::actualizarProducto(){
      case 3:{
         int stock;
 
-        do{
-          cout << "Ingrese el nuevo stock: ";
-          stock = pedirEnteroValido();
-        }while(!validarNumero(stock));
+        cout << "Ingrese el nuevo stock: ";
+        stock = pedirEnteroValido();
 
         if(stock > 0){
-            reg.setDni(dni);
+            reg.setStock(stock);
             _repo.guardar(pos, reg);
 
             cout << "STOCK ACTUALIZADO" << endl;
@@ -639,13 +637,14 @@ void AlmacenManager::mostrarStockBajoAlto(){
 }
 
 void AlmacenManager::mostrarLista(const Producto &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "ID Categoria: " << reg.getIdCategoria() << endl;
   cout << "ID Proveedor: " << reg.getIdProveedor() << endl;
   cout << "Nombre: "<< reg.getNombre() << endl;
   cout << "Precio: " << reg.getPrecio() << endl;
   cout << "Stock: " << reg.getStock() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }
 
 void AlmacenManager::crearBackup(){

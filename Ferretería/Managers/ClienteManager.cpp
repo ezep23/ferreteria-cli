@@ -321,7 +321,7 @@ void ClienteManager::mostrarApellidosZA(){
 
 void ClienteManager::mostrar(int id){
     int pos = _repo.buscarID(id);
-    cout << "Cliente asignado: " << _repo.leer(pos).getNombre() << " " << _repo.leer(pos).getNombre() << " - " << _repo.leer(pos).getDni() << endl;
+    cout << "Cliente asignado: " << _repo.leer(pos).getNombre() << " " << _repo.leer(pos).getApellido() << " - " << _repo.leer(pos).getDni() << endl;
 }
 
 void ClienteManager::crearBackup(){
@@ -332,10 +332,11 @@ void ClienteManager::cargarBackup(){
 }
 
 void ClienteManager::mostrarLista(const Cliente &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "DNI: " << reg.getDni() << endl;
   cout << "Nombre: "<< reg.getNombre() << endl;
   cout << "Apellido " << reg.getApellido() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }
 

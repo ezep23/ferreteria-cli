@@ -5,8 +5,8 @@ class Persona{
 protected:
    char _nombre[20];
    char _apellido[20];
-   char _telefono[10];
-   char _email[25];
+   char _telefono[18];
+   char _email[35];
    char _dni[8];
 public:
 

@@ -118,7 +118,7 @@ void DetalleCompraManager::modificar(){
   do{
     cout << "Ingrese el ID de la compra: ";
     id = pedirEnteroValido();
-  }while(!validarExisteTransaccion(id))
+  }while(!validarExisteTransaccion(id));
 
   cout << "DETALLES DE ESA TRANSACCION" << endl;
   mostrarDetallesTransaccion(id);
@@ -160,6 +160,13 @@ void DetalleCompraManager::modificar(){
     }
     break;
     case 2:{
+
+        int idProducto;
+
+        do{
+            cout << "Ingrese el ID del producto nuevo: ";
+            idProducto = pedirEnteroValido();
+        }while(!_almacenManager.validarID(idProducto));
 
         int pos = _repo.buscarID(idProducto);
         DetalleTransaccion detalle = _repo.leer(pos);
@@ -263,6 +270,8 @@ bool DetalleCompraManager::validarExisteTransaccion(int idTransaccion){
  }
 
 void DetalleCompraManager::mostrarDetalleCompleto(const DetalleTransaccion &reg){
+    cout << "-----------------------------------" << endl;
+    cout << "         DETALLE DE COMPRA         " << endl;
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getId() << endl;
     cout << " TRANSACCION ID: " << reg.getIdTransaccion() << endl;

@@ -69,12 +69,12 @@ void ProveedorManager::cargar(){
   do{
     cout << "Ingrese telefono: ";
     tel = cargarCadena();
-  }while(!validarCadena(tel));
+  }while(!validarTelefonoString(tel));
 
   do{
     cout << "Ingrese email: ";
     email = cargarCadena();
-  }while(!validarCadena(email));
+  }while(!validarEmailString(email));
 
   if(_repo.guardar(Proveedor(nombre, apellido, tel, email, dni, id, idE))){
     cout << "Se agrego correctamente" << endl;
@@ -186,7 +186,7 @@ void ProveedorManager::actualizar(){
         do{
             cout << "Ingrese el nuevo telefono: ";
             tel = cargarCadena();
-        }while(!validarCadena(tel));
+        }while(!validarTelefonoString(tel));
 
         reg.setTelefono(tel);
         _repo.guardar(pos, reg);
@@ -200,7 +200,7 @@ void ProveedorManager::actualizar(){
         do{
             cout << "Ingrese el nuevo email: ";
             email = cargarCadena();
-        }while(!validarCadena(email));
+        }while(!validarEmailString(email));
 
         reg.setEmail(email);
         _repo.guardar(pos, reg);
@@ -392,6 +392,7 @@ void ProveedorManager::cargarBackup(){
 }
 
 void ProveedorManager::mostrarLista(const Proveedor &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "ID Empresa: " << reg.getIdEmpresa() << endl;
   cout << "DNI: " << reg.getDni() << endl;
@@ -399,6 +400,6 @@ void ProveedorManager::mostrarLista(const Proveedor &reg){
   cout << "Apellido: " << reg.getApellido() << endl;
   cout << "Telefono: " << reg.getTelefono() << endl;
   cout << "Email: " << reg.getEmail() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }
 

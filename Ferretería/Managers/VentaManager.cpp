@@ -23,7 +23,7 @@ bool VentaManager::guardar(int pos, Transaccion reg){
 }
 
 int VentaManager::cargar() {
-    int id, idCliente = 0, idEmpleado = 0;
+    int id, idCliente, idEmpleado;
     id = _repo.getNuevoID();
 
     cout << "--- NUEVA VENTA #" << id << " ----" << endl;
@@ -51,7 +51,7 @@ int VentaManager::cargar() {
        cout << "ID: ";
        idEmpleado = pedirEnteroValido();
 
-       if(idEmpleado = 0){
+       if(idEmpleado == 0){
             cout << "EMPLEADOS" << endl;
             _empleadoManager.mostrar();
 
@@ -767,6 +767,8 @@ void VentaManager::cargarBackup(){
 }
 
 void VentaManager::mostrarVentaCompleta(const Transaccion &reg){
+    cout << "-----------------------------------" << endl;
+    cout << "         CABECERA DE VENTA         " << endl;
     cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;
     cout << " ID Cliente: " << reg.getIdPersona() << endl;

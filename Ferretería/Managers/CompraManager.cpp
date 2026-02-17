@@ -453,8 +453,10 @@ void CompraManager::cargarBackup(){
 
 void CompraManager::mostrarCompraCompleta(const Transaccion &reg){
     cout << "-----------------------------------" << endl;
+    cout << "         CABECERA DE COMPRA        " << endl;
+    cout << "-----------------------------------" << endl;
     cout << " ID: " << reg.getIdTransaccion() << endl;
-    cout << " ID Empleado: " << reg.getIdPersona() << endl;
+    cout << " ID Empleado: " << reg.getIdEmpleado() << endl;
     cout << " Monto total: " << reg.getMontoTotal() << endl;
 
 

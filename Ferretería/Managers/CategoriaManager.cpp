@@ -140,7 +140,8 @@ void CategoriaManager::cargarBackup(){
 }
 
 void CategoriaManager::mostrarLista(const Categoria &reg){
+  cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;
   cout << "Nombre categoria: " << reg.getNombre() << endl;
-  cout << "------------" <<endl;
+  cout << "----------------------------" <<endl;
 }
