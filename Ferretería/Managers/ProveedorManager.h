@@ -16,8 +16,8 @@ class ProveedorManager{
     void mostrarNombresZA();
     void mostrarApellidosAZ();
     void mostrarApellidosZA();
-    void mostrarNombreComercialAZ();
-    void mostrarNombreComercialZA();
+    void mostrarEmpresaAntigua();
+    void mostrarEmpresaReciente();
 
     bool existeProveedor(int id);
     int obtenerNumeroProximoID();

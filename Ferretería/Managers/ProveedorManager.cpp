@@ -384,6 +384,66 @@ void ProveedorManager::mostrarApellidosZA(){
     delete[] vProveedor;
 }
 
+void ProveedorManager::mostrarEmpresaAntigua(){
+  int cantidad = _repo.getCantidadRegistros();
+  Proveedor *vProveedor = new Proveedor[cantidad];
+
+  if(vProveedor == nullptr){
+    cout << "No se pudo asignar memoria..." << endl;
+    exit(-100);
+  }
+
+  int cantidadEmpresas = _empresaManager.obtenerCantidadRegistros();
+
+  _repo.leerTodos(vProveedor, cantidad);
+
+  for(int j=1; j <= cantidadEmpresas; j++){
+    cout << "# EMPRESA: ";
+    _empresaManager.mostrarNombreEmpresa(j);
+
+    cout << "PROVEEDORES: " << endl;
+    for(int i=0; i<cantidad; i++){
+        if(vProveedor[i].getEstado() && vProveedor[i].getIdEmpresa() == j){
+            mostrarLista(vProveedor[i]);
+        }
+    }
+
+  }
+
+  cout << endl;
+  delete [] vProveedor;
+}
+
+void ProveedorManager::mostrarEmpresaReciente(){
+    int cantidad = _repo.getCantidadRegistros();
+  Proveedor *vProveedor = new Proveedor[cantidad];
+
+  if(vProveedor == nullptr){
+    cout << "No se pudo asignar memoria..." << endl;
+    exit(-100);
+  }
+
+  int cantidadEmpresas = _empresaManager.obtenerCantidadRegistros();
+
+  _repo.leerTodos(vProveedor, cantidad);
+
+  for(int j = cantidadEmpresas; j >= 1; j--){
+    cout << "# EMPRESA: ";
+     _empresaManager.mostrarNombreEmpresa(j);
+
+    cout << "PROVEEDORES: " << endl;
+    for(int i=0; i<cantidad; i++){
+        if(vProveedor[i].getEstado() && vProveedor[i].getIdEmpresa() == j){
+            mostrarLista(vProveedor[i]);
+        }
+    }
+
+  }
+
+  cout << endl;
+  delete [] vProveedor;
+}
+
 void ProveedorManager::crearBackup(){
     _repo.crearBackup();
 }

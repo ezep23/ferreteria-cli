@@ -16,8 +16,8 @@ void ProveedorMenu::mostrarOpciones(){
   cout << "------------------------" << endl;
   cout << "5 - LISTAR POR NOMBRES A-Z" << endl;
   cout << "6 - LISTAR POR NOMBRES Z-A" << endl;
-  cout << "7 - LISTAR POR APELLIDOS A-Z" << endl;
-  cout << "8 - LISTAR POR APELLIDOS Z-A" << endl;
+  cout << "7 - LISTAR POR EMPRESA (MAS VIEJAS)" << endl;
+  cout << "8 - LISTAR POR EMPRESA (MAS NUEVAS)" << endl;
   cout << "---------------------------------" << endl;
   cout << "0 - SALIR" << endl;
   cout << "--------------------"<<endl;
@@ -44,10 +44,10 @@ void ProveedorMenu::ejecutarOpcion(int opcion){
     _proveedorManager.mostrarNombresZA();
   break;
   case 7:
-    _proveedorManager.mostrarApellidosAZ();
+    _proveedorManager.mostrarEmpresaAntigua();
   break;
   case 8:
-    _proveedorManager.mostrarApellidosZA();
+    _proveedorManager.mostrarEmpresaReciente();
   break;
   }
 }

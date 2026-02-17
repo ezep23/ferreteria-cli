@@ -2,6 +2,7 @@
 #include "../Archivos/ProductoArchivo.h"
 #include "ProveedorManager.h"
 #include "CategoriaManager.h"
+#include "EmpresaManager.h"
 
 class AlmacenManager{
   public:
@@ -41,6 +42,7 @@ class AlmacenManager{
     void mostrarLista(const Producto &reg);
   private:
     ProductoArchivo _repo;
+    EmpresaManager _empresaManager;
     ProveedorManager _proveedorManager;
     CategoriaManager _categoriaManager;
 };

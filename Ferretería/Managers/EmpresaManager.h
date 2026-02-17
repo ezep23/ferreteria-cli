@@ -17,6 +17,7 @@ class EmpresaManager{
     int retornarIDsNombresOrdenadosAZ();
     int retornarIDsNombresOrdenadosZA();
 
+    int obtenerCantidadRegistros();
     void mostrarNombreEmpresa(int id);
     bool validarEmpresaExiste(int id);
 

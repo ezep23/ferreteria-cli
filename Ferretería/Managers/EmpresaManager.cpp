@@ -227,6 +227,10 @@ void EmpresaManager::cargarBackup(){
     _repo.cargarBackup();
 }
 
+int EmpresaManager::obtenerCantidadRegistros(){
+    return _repo.getCantidadRegistros();
+}
+
 void EmpresaManager::mostrarLista(const Empresa &reg){
   cout << "----------------------------" <<endl;
   cout << "ID: " << reg.getId() << endl;

@@ -29,7 +29,8 @@ int VentaManager::cargar() {
     cout << "--- NUEVA VENTA #" << id << " ----" << endl;
 
     do {
-        cout << "Ingrese el ID de Cliente ('0' - para salir): ";
+        cout << "Ingrese el ID de Cliente ('0' - para crear)" << endl;
+        cout << "Opcion: ";
         idCliente = pedirEnteroValido();
 
         if (idCliente == 0) {
