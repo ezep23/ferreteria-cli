@@ -124,7 +124,7 @@
 	<iostream>
 	"VentaMenu.h"
 
-1771369949 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.cpp
+1771374084 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\ventamanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/Cliente.h"
@@ -144,7 +144,7 @@
 	<iostream>
 	"ClienteArchivo.h"
 
-1771369949 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.cpp
+1771377263 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\clientemanager.cpp
 	<iostream>
 	<string.h>
 	"ClienteManager.h"
@@ -178,7 +178,7 @@
 	"../Archivos/ProveedorArchivo.h"
 	"EmpresaManager.h"
 
-1771370224 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.cpp
+1771370407 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\proveedormanager.cpp
 	<iostream>
 	"ProveedorManager.h"
 	"../Entidades/Proveedor.h"
@@ -283,16 +283,17 @@
 	<string>
 	"../Entidades/DetalleTransaccion.h"
 
-1771361848 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.cpp
+1771371142 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.cpp
 	<iostream>
 	"AlmacenManager.h"
 	"../Entidades/Producto.h"
 	"../Utils.h"
 
-1771332042 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.h
+1771371142 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\almacenmanager.h
 	"../Archivos/ProductoArchivo.h"
 	"ProveedorManager.h"
 	"CategoriaManager.h"
+	"EmpresaManager.h"
 
 1769967251 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\almacenmenu.h
 	"Menu.h"
@@ -354,7 +355,7 @@
 	<iostream>
 	"DetalleCompraArchivo.h"
 
-1771362351 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
+1771376917 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\compramanager.cpp
 	<iostream>
 	"../utils.h"
 	"../Entidades/Empleado.h"
@@ -372,7 +373,7 @@
 	"../Entidades/DetalleTransaccion.h"
 	"DetalleCompraManager.h"
 
-1771273864 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\compramenu.cpp
+1771376616 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\menus\compramenu.cpp
 	<iostream>
 	"CompraMenu.h"
 
@@ -399,7 +400,7 @@
 1771332043 c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.h
 	"../Archivos/EmpleadoArchivo.h"
 
-1771361848 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.cpp
+1771377263 source:c:\users\ezequ\onedrive\desktop\ferreteria-febrero\ferretería\managers\empleadomanager.cpp
 	<iostream>
 	"EmpleadoManager.h"
 	"../Entidades/Empleado.h"

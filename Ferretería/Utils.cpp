@@ -3,12 +3,11 @@
 #include <limits>
 #include "utils.h"
 
-std::string cargarCadena()
-{
+std::string cargarCadena(){
   std::string texto;
 
-  if(std::cin.peek() == '\n')
-  {
+  // Usuario presionó el enter
+  if(std::cin.peek() == '\n'){
     std::cin.ignore();
   }
 
@@ -130,13 +129,8 @@ int pedirEnteroValido(){
         if (std::cin >> numero) {
             return numero;
         } else {
-            // Si falla (porque ingresaron letras, por ejemplo):
             std::cout << "Error: Entrada invalida. Solo se aceptan numeros enteros." << std::endl;
-
-            // 1. Limpiamos el estado de error de cin
             std::cin.clear();
-
-            // 2. Descartamos lo que sea que haya escrito el usuario hasta el salto de linea
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             std::cout << "Intentalo de nuevo: ";
@@ -151,11 +145,9 @@ float pedirFlotanteValido() {
         if (std::cin >> numero) {
             return numero;
         } else {
-            // Si falla (ingresaron letras o símbolos inválidos):
             std::cout << "Error: Entrada invalida. Solo se aceptan numeros (usa el punto '.' para decimales)." << std::endl;
-
-            std::cin.clear(); // Limpiamos el estado de error
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Barremos la basura del teclado
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             std::cout << "Intentalo de nuevo: ";
         }

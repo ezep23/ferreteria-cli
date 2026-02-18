@@ -205,13 +205,8 @@ void EmpleadoManager::actualizar(){
 bool EmpleadoManager::existeRegistro(int id){
    int pos = _repo.buscarID(id);
 
-   if(pos){
-
-        if(_repo.leer(pos).getEstado()){
-            return true;
-        }
-
-        return false;
+   if(pos >= 0){
+        return _repo.leer(pos).getEstado();
    }
 
    return false;
@@ -237,7 +232,6 @@ void EmpleadoManager::mostrarNombresAZ() {
     Empleado *vEmpleado = new Empleado[cantidad];
     _repo.leerTodos(vEmpleado, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -274,7 +268,6 @@ void EmpleadoManager::mostrarNombresZA(){
     Empleado *vEmpleado = new Empleado[cantidad];
     _repo.leerTodos(vEmpleado, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -311,7 +304,7 @@ void EmpleadoManager::mostrarApellidosAZ(){
     Empleado *vEmpleado = new Empleado[cantidad];
     _repo.leerTodos(vEmpleado, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
+
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -348,7 +341,6 @@ void EmpleadoManager::mostrarApellidosZA(){
     Empleado *vEmpleado = new Empleado[cantidad];
     _repo.leerTodos(vEmpleado, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 

@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../utils.h" // para cargar cadena (string)
-
+#include "../utils.h"
 #include "../Entidades/DetalleTransaccion.h"
 
 #include "DetalleVentaManager.h"

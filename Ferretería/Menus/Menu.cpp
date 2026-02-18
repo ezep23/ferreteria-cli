@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "Menu.h"
+#include "../Utils.h"g
 
 Menu::Menu(){
   _cantidadOpciones = 1;
@@ -30,7 +31,7 @@ int Menu::seleccionarOpciones(){
   int opcion;
   mostrarOpciones();
   cout << "Opcion: ";
-  cin >> opcion;
+  opcion = pedirEnteroValido();
 
   while(opcion < 0 || opcion > _cantidadOpciones){
       cout << "opcion incorrecta"<<endl;

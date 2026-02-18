@@ -424,7 +424,6 @@ void AlmacenManager::mostrarNombresAZ(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -461,7 +460,6 @@ void AlmacenManager::mostrarNombresZA(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -498,7 +496,6 @@ void AlmacenManager::mostrarPreciosAltoBajo(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -535,7 +532,6 @@ void AlmacenManager::mostrarPreciosBajoAlto(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -572,7 +568,6 @@ void AlmacenManager::mostrarStockAltoBajo(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -609,7 +604,6 @@ void AlmacenManager::mostrarStockBajoAlto(){
     Producto *vProducto = new Producto[cantidad];
     _repo.leerTodos(vProducto, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 

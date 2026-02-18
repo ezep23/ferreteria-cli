@@ -246,7 +246,6 @@ void ProveedorManager::mostrarNombresAZ() {
     Proveedor *vProveedor = new Proveedor[cantidad];
     _repo.leerTodos(vProveedor, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -283,7 +282,6 @@ void ProveedorManager::mostrarNombresZA(){
     Proveedor *vProveedor = new Proveedor[cantidad];
     _repo.leerTodos(vProveedor, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -320,7 +318,7 @@ void ProveedorManager::mostrarApellidosAZ(){
     Proveedor *vProveedor = new Proveedor[cantidad];
     _repo.leerTodos(vProveedor, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
+    /// SELECTION SORT
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -357,7 +355,7 @@ void ProveedorManager::mostrarApellidosZA(){
     Proveedor *vProveedor = new Proveedor[cantidad];
     _repo.leerTodos(vProveedor, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
+    /// SELECTION SORT
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 

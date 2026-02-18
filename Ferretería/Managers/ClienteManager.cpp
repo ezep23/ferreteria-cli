@@ -158,15 +158,9 @@ void ClienteManager::actualizar(){
 bool ClienteManager::existeRegistro(int id){
    int pos = _repo.buscarID(id);
 
-   if(pos){
-
-        if(_repo.leer(pos).getEstado()){
-            return true;
-        }
-
-        return false;
+   if(pos >= 0){
+        return _repo.leer(pos).getEstado();
    }
-
    return false;
 }
 
@@ -181,7 +175,6 @@ void ClienteManager::mostrarNombresAZ() {
     Cliente *vCliente = new Cliente[cantidad];
     _repo.leerTodos(vCliente, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -218,7 +211,6 @@ void ClienteManager::mostrarNombresZA(){
     Cliente *vCliente = new Cliente[cantidad];
     _repo.leerTodos(vCliente, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -255,7 +247,6 @@ void ClienteManager::mostrarApellidosAZ(){
     Cliente *vCliente = new Cliente[cantidad];
     _repo.leerTodos(vCliente, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -292,7 +283,6 @@ void ClienteManager::mostrarApellidosZA(){
     Cliente *vCliente = new Cliente[cantidad];
     _repo.leerTodos(vCliente, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 

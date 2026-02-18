@@ -4,7 +4,7 @@ using namespace std;
 #include "CompraMenu.h"
 
 CompraMenu::CompraMenu(){
-  _cantidadOpciones = 6;
+  _cantidadOpciones = 7;
 }
 
 void CompraMenu::mostrarOpciones(){

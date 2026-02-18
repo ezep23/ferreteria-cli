@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../utils.h" //
+#include "../utils.h"
 
 #include "../Entidades/DetalleTransaccion.h"
 

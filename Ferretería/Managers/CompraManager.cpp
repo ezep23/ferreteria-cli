@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../utils.h" // para cargar cadena (string)
+#include "../utils.h"
 
 #include "../Entidades/Empleado.h"
 #include "../Entidades/Transaccion.h"
@@ -322,7 +322,7 @@ void CompraManager::comprasPorEmpleado(){
     delete[] cantEmpleados;
 }
 
-void CompraManager::mostrarOrdenadasUltimaCompra(){
+void CompraManager::mostrarOrdenadasPrimeraCompra(){
     int cantidad = _repo.getCantidadRegistros();
 
     if (cantidad <= 0) {
@@ -334,7 +334,7 @@ void CompraManager::mostrarOrdenadasUltimaCompra(){
     _repo.leerTodos(vCompra, cantidad);
 
     for (int i = 0; i < cantidad - 1; i++) {
-        int j_max = i; // Ahora buscamos el mayor
+        int j_max = i;
 
         for (int j = i + 1; j < cantidad; j++) {
 
@@ -344,11 +344,9 @@ void CompraManager::mostrarOrdenadasUltimaCompra(){
             long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
             long fechaMax_num = f_max.getAnio() * 10000 + f_max.getMes() * 100 + f_max.getDia();
 
-            // CAMBIO CLAVE: Usamos > para que la fecha más nueva gane
             if (fechaJ_num > fechaMax_num) {
                 j_max = j;
             }
-            // Desempate por hora si las fechas son iguales
             else if (fechaJ_num == fechaMax_num) {
 
                 Hora h_j = vCompra[j].getHoraTransaccion();
@@ -357,14 +355,12 @@ void CompraManager::mostrarOrdenadasUltimaCompra(){
                 long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
                 long horaMax_num = h_max.getHora() * 100 + h_max.getMinutos();
 
-                // CAMBIO CLAVE: Usamos > para la hora también
                 if (horaJ_num > horaMax_num) {
                     j_max = j;
                 }
             }
         }
 
-        // Intercambio manual (Swap)
         if (j_max != i) {
             Transaccion temp = vCompra[i];
             vCompra[i] = vCompra[j_max];
@@ -382,7 +378,7 @@ void CompraManager::mostrarOrdenadasUltimaCompra(){
     delete[] vCompra;
 }
 
-void CompraManager::mostrarOrdenadasPrimeraCompra(){
+void CompraManager::mostrarOrdenadasUltimaCompra(){
     int cantidad = _repo.getCantidadRegistros();
 
     if (cantidad <= 0) {
@@ -398,25 +394,19 @@ void CompraManager::mostrarOrdenadasPrimeraCompra(){
 
         for (int j = i + 1; j < cantidad; j++) {
 
-            // 1. Extraemos las fechas de los objetos que estamos comparando
             Fecha f_j = vCompra[j].getFechaTransaccion();
             Fecha f_min = vCompra[j_min].getFechaTransaccion();
 
-            // 2. Aplicamos el truco matemático (AAAAMMDD)
             long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
             long fechaMin_num = f_min.getAnio() * 10000 + f_min.getMes() * 100 + f_min.getDia();
 
-            // Comparamos los enteros de las fechas
             if (fechaJ_num < fechaMin_num) {
                 j_min = j;
-            }
-            // 3. Solo si las fechas son exactamente iguales, desempatamos por la hora
-            else if (fechaJ_num == fechaMin_num) {
+            } else if (fechaJ_num == fechaMin_num) {
 
                 Hora h_j = vCompra[j].getHoraTransaccion();
                 Hora h_min = vCompra[j_min].getHoraTransaccion();
 
-                // Aplicamos el mismo truco para la hora (HHMM)
                 long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
                 long horaMin_num = h_min.getHora() * 100 + h_min.getMinutos();
 

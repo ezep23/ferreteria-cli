@@ -29,7 +29,7 @@ int Hora::getMinutos(){
 
 bool Hora::validarHora(int hora, int minutos){
 
-    if (hora < 0 || hora > 24){
+    if (hora < 0 || hora > 23){
 
         cout << "HORA MAL INGRESADA" << endl;
         return false;

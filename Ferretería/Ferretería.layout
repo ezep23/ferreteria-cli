@@ -2,24 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Entidades\Proveedor.cpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menus\VentaMenu.cpp" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="772" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="Menus\ProveedorMenu.cpp" open="1" top="0" tabpos="43" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="410" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="Menus\BackupMenu.h" open="1" top="0" tabpos="94" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="153" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\VentaArchivo.h" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="586" topLine="0" />
+			<Cursor1 position="461" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="Entidades\Hora.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,29 +12,154 @@
 			<Cursor1 position="267" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Menus\CategoriaMenu.cpp" open="1" top="0" tabpos="53" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Archivos\VentaArchivo.h" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="10" />
+			<Cursor1 position="586" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Managers\VentaManager.cpp" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menus\AppMenu.h" open="1" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1131" topLine="22" />
+			<Cursor1 position="296" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="Entidades\DetalleTransaccion.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menus\Menu.cpp" open="1" top="1" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="161" topLine="3" />
+			<Cursor1 position="287" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="Entidades\Fecha.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Entidades\Persona.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="368" topLine="3" />
+			<Cursor1 position="336" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="Archivos\EmpleadoArchivo.h" open="1" top="0" tabpos="88" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="511" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\VentasManager.h" open="1" top="0" tabpos="64" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="352" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\EmpleadoMenu.h" open="1" top="0" tabpos="82" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Empresa.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="158" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="Archivos\EmpleadoArchivo.cpp" open="1" top="0" tabpos="89" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1840" topLine="99" />
+		</Cursor>
+	</File>
+	<File name="Managers\InformeManager.cpp" open="1" top="0" tabpos="93" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="66" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Producto.h" open="1" top="0" tabpos="44" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="213" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Archivos\DetalleCompraArchivo.cpp" open="1" top="0" tabpos="79" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3999" topLine="167" />
+		</Cursor>
+	</File>
+	<File name="Managers\EmpresaManager.cpp" open="1" top="0" tabpos="55" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3354" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\BackupManager.cpp" open="1" top="0" tabpos="97" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\VentaManager.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1104" topLine="19" />
 		</Cursor>
 	</File>
 	<File name="Menus\ClienteMenu.h" open="1" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\VentaManager.cpp" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="805" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="Menus\CategoriaMenu.cpp" open="1" top="0" tabpos="53" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="Managers\InformeManager.h" open="1" top="0" tabpos="92" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="654" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="Archivos\DetalleVentaArchivo.cpp" open="1" top="0" tabpos="63" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3979" topLine="164" />
+		</Cursor>
+	</File>
+	<File name="Menus\CompraMenu.cpp" open="1" top="0" tabpos="71" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1264" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Producto.cpp" open="1" top="0" tabpos="45" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="285" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Archivos\ClienteArchivo.cpp" open="1" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3254" topLine="148" />
+		</Cursor>
+	</File>
+	<File name="Archivos\EmpresaArchivo.cpp" open="1" top="0" tabpos="57" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3257" topLine="157" />
+		</Cursor>
+	</File>
+	<File name="Utils.cpp" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\CategoriaManager.h" open="1" top="0" tabpos="48" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="318" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Archivos\CompraArchivo.h" open="1" top="0" tabpos="76" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="590" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\EmpleadoMenu.cpp" open="1" top="0" tabpos="83" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1273" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Fecha.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="280" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Empleado.h" open="1" top="0" tabpos="86" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="293" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Managers\DetalleVentaManager.h" open="1" top="0" tabpos="60" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -59,22 +169,28 @@
 	</File>
 	<File name="Managers\ClienteManager.cpp" open="1" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="839" topLine="2" />
+			<Cursor1 position="3362" topLine="21" />
+		</Cursor>
+		<Folding>
+			<Collapse line="16" />
+			<Collapse line="52" />
+			<Collapse line="73" />
+			<Collapse line="88" />
+		</Folding>
+	</File>
+	<File name="Entidades\Empleado.cpp" open="1" top="0" tabpos="87" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="553" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Utils.cpp" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Managers\DetalleVentaManager.cpp" open="1" top="0" tabpos="61" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="429" topLine="18" />
+			<Cursor1 position="66" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Menus\AppMenu.h" open="1" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Managers\AlmacenManager.h" open="1" top="0" tabpos="66" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="296" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="Managers\AlmacenManager.h" open="1" top="1" tabpos="66" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="566" topLine="3" />
+			<Cursor1 position="206" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="Entidades\Categoria.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -82,244 +198,9 @@
 			<Cursor1 position="271" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Menus\VentaMenu.h" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="261" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\VentaManager.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1104" topLine="19" />
-		</Cursor>
-	</File>
-	<File name="Managers\CompraManager.cpp" open="1" top="0" tabpos="80" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12870" topLine="452" />
-		</Cursor>
-	</File>
-	<File name="Archivos\EmpresaArchivo.cpp" open="1" top="0" tabpos="57" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3257" topLine="157" />
-		</Cursor>
-	</File>
-	<File name="Menus\ClienteMenu.cpp" open="1" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="213" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="Managers\DetalleCompraManager.h" open="1" top="0" tabpos="75" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="633" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Producto.h" open="1" top="0" tabpos="44" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="213" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="Archivos\ProveedorArchivo.h" open="1" top="0" tabpos="40" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="520" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Menus\CompraMenu.h" open="1" top="0" tabpos="70" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="223" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\EmpleadoManager.cpp" open="1" top="0" tabpos="85" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9170" topLine="11" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Persona.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="336" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="Archivos\VentaArchivo.cpp" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3468" topLine="167" />
-		</Cursor>
-	</File>
-	<File name="Menus\Menu.h" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="233" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\VentasManager.h" open="1" top="0" tabpos="64" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="352" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Empresa.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="463" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Cliente.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="326" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="Menus\InformeMenu.h" open="1" top="0" tabpos="90" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="272" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\ClienteArchivo.h" open="1" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="503" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\InformeManager.cpp" open="1" top="0" tabpos="93" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="66" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Proveedor.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="469" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\DetalleVentaArchivo.h" open="1" top="0" tabpos="62" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="595" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Menus\Menu.cpp" open="1" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="79" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\CategoriaArchivo.h" open="1" top="0" tabpos="51" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="499" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="Managers\DetalleCompraManager.cpp" open="1" top="0" tabpos="81" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7742" topLine="257" />
-		</Cursor>
-	</File>
-	<File name="Archivos\ProveedorArchivo.cpp" open="1" top="0" tabpos="41" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3337" topLine="155" />
-		</Cursor>
-	</File>
-	<File name="Menus\InformeMenu.cpp" open="1" top="0" tabpos="91" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="226" topLine="38" />
-		</Cursor>
-	</File>
-	<File name="Archivos\ProductoArchivo.h" open="1" top="0" tabpos="46" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="511" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\EmpleadoArchivo.cpp" open="1" top="0" tabpos="89" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1840" topLine="99" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Persona.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="131" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="Menus\EmpleadoMenu.h" open="1" top="0" tabpos="82" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Archivos\CategoriaArchivo.cpp" open="1" top="0" tabpos="50" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3552" topLine="157" />
-		</Cursor>
-	</File>
-	<File name="Menus\AlmacenMenu.cpp" open="1" top="0" tabpos="69" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="459" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Empleado.h" open="1" top="0" tabpos="86" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="293" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\AlmacenManager.cpp" open="1" top="0" tabpos="67" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="15578" topLine="614" />
-		</Cursor>
-	</File>
-	<File name="Menus\CategoriaMenu.h" open="1" top="0" tabpos="52" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\DetalleVentaManager.cpp" open="1" top="0" tabpos="61" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9042" topLine="296" />
-		</Cursor>
-	</File>
-	<File name="Entidades\DetalleTransaccion.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1009" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Producto.cpp" open="1" top="0" tabpos="45" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="285" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Menus\EmpleadoMenu.cpp" open="1" top="0" tabpos="83" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1273" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="Managers\EmpresaManager.h" open="1" top="0" tabpos="54" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="375" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="Archivos\DetalleCompraArchivo.cpp" open="1" top="0" tabpos="79" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3999" topLine="167" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Hora.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="376" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Menus\CompraMenu.cpp" open="1" top="0" tabpos="71" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1254" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="Managers\EmpleadoManager.h" open="1" top="0" tabpos="84" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="483" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="Managers\CompraManager.h" open="1" top="0" tabpos="74" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="631" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="Utils.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="240" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Menus\BackupMenu.cpp" open="1" top="0" tabpos="95" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1084" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="Managers\BackupManager.h" open="1" top="0" tabpos="96" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1073" topLine="0" />
+			<Cursor1 position="66" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Menus\ProveedorMenu.h" open="1" top="0" tabpos="42" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -327,79 +208,29 @@
 			<Cursor1 position="290" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Menus\AlmacenMenu.h" open="1" top="0" tabpos="68" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Entidades\Hora.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="461" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="Entidades\DetalleTransaccion.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1009" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="Menus\BackupMenu.h" open="1" top="0" tabpos="94" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="153" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\CategoriaMenu.h" open="1" top="0" tabpos="52" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Entidades\Transaccion.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Entidades\Empresa.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="514" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="Archivos\EmpresaArchivo.h" open="1" top="0" tabpos="56" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="503" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\InformeManager.h" open="1" top="0" tabpos="92" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="654" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="Managers\BackupManager.cpp" open="1" top="0" tabpos="97" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="161" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="Archivos\CompraArchivo.cpp" open="1" top="0" tabpos="77" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3469" topLine="166" />
-		</Cursor>
-	</File>
-	<File name="Menus\EmpresaMenu.cpp" open="1" top="0" tabpos="59" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="316" topLine="19" />
-		</Cursor>
-	</File>
-	<File name="Managers\EmpresaManager.cpp" open="1" top="0" tabpos="55" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5511" topLine="199" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Empresa.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="158" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="Archivos\DetalleVentaArchivo.cpp" open="1" top="0" tabpos="63" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3979" topLine="167" />
-		</Cursor>
-	</File>
-	<File name="Menus\AppMenu.cpp" open="1" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1351" topLine="41" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Fecha.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="280" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Entidades\Cliente.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="515" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\VentasManager.cpp" open="1" top="0" tabpos="65" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="431" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="Managers\ClienteManager.h" open="1" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="482" topLine="0" />
+			<Cursor1 position="463" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Entidades\Categoria.cpp" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -407,69 +238,96 @@
 			<Cursor1 position="359" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="Menus\VentaMenu.cpp" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menus\AppMenu.cpp" open="1" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="461" topLine="6" />
+			<Cursor1 position="1351" topLine="41" />
 		</Cursor>
 	</File>
-	<File name="Archivos\ClienteArchivo.cpp" open="1" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menus\Menu.h" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3254" topLine="156" />
+			<Cursor1 position="233" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Managers\ProveedorManager.cpp" open="1" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Entidades\Persona.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9192" topLine="383" />
+			<Cursor1 position="131" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="Entidades\Transaccion.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1832" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="Archivos\DetalleCompraArchivo.h" open="1" top="0" tabpos="78" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="597" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="148" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\ComprasManager.cpp" open="1" top="0" tabpos="73" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1527" topLine="76" />
-		</Cursor>
-	</File>
-	<File name="Archivos\ProductoArchivo.cpp" open="1" top="0" tabpos="47" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3294" topLine="153" />
-		</Cursor>
-	</File>
-	<File name="Archivos\EmpleadoArchivo.h" open="1" top="0" tabpos="88" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Archivos\ProductoArchivo.h" open="1" top="0" tabpos="46" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="511" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="Menus\AlmacenMenu.h" open="1" top="0" tabpos="68" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\InformeMenu.h" open="1" top="0" tabpos="90" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="272" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Fecha.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="368" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Archivos\DetalleVentaArchivo.h" open="1" top="0" tabpos="62" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="595" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\AlmacenMenu.cpp" open="1" top="0" tabpos="69" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="459" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="Menus\CompraMenu.h" open="1" top="0" tabpos="70" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="223" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Proveedor.cpp" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="772" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Cliente.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="515" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\EmpresaManager.h" open="1" top="0" tabpos="54" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="375" topLine="4" />
+		</Cursor>
+	</File>
 	<File name="Managers\CategoriaManager.cpp" open="1" top="0" tabpos="49" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3181" topLine="121" />
+			<Cursor1 position="3181" topLine="12" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+			<Collapse line="34" />
+			<Collapse line="55" />
+			<Collapse line="70" />
+			<Collapse line="109" />
+		</Folding>
+	</File>
+	<File name="Archivos\VentaArchivo.cpp" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2954" topLine="149" />
 		</Cursor>
 	</File>
-	<File name="Managers\ComprasManager.h" open="1" top="0" tabpos="72" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Archivos\CategoriaArchivo.h" open="1" top="0" tabpos="51" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="363" topLine="0" />
+			<Cursor1 position="499" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Archivos\CompraArchivo.h" open="1" top="0" tabpos="76" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Managers\VentasManager.cpp" open="1" top="0" tabpos="65" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="590" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Managers\CategoriaManager.h" open="1" top="0" tabpos="48" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="318" topLine="0" />
+			<Cursor1 position="431" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Menus\EmpresaMenu.h" open="1" top="0" tabpos="58" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -477,14 +335,211 @@
 			<Cursor1 position="185" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Managers\ProveedorManager.h" open="1" top="0" tabpos="38" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Managers\CompraManager.cpp" open="1" top="0" tabpos="80" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="432" topLine="5" />
+			<Cursor1 position="66" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Entidades\Empleado.cpp" open="1" top="0" tabpos="87" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Managers\ProveedorManager.h" open="1" top="0" tabpos="38" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="553" topLine="13" />
+			<Cursor1 position="432" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="Menus\ClienteMenu.cpp" open="1" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="213" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="Managers\ProveedorManager.cpp" open="1" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="312" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="25" />
+			<Collapse line="91" />
+			<Collapse line="112" />
+			<Collapse line="127" />
+			<Collapse line="237" />
+			<Collapse line="273" />
+			<Collapse line="309" />
+			<Collapse line="346" />
+			<Collapse line="384" />
+			<Collapse line="414" />
+		</Folding>
+	</File>
+	<File name="Archivos\ProveedorArchivo.h" open="1" top="0" tabpos="40" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="520" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\EmpresaMenu.cpp" open="1" top="0" tabpos="59" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="316" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="Managers\CompraManager.h" open="1" top="0" tabpos="74" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="631" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="Archivos\ClienteArchivo.h" open="1" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="503" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\EmpleadoManager.cpp" open="1" top="0" tabpos="85" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4553" topLine="21" />
+		</Cursor>
+		<Folding>
+			<Collapse line="13" />
+			<Collapse line="60" />
+			<Collapse line="81" />
+			<Collapse line="96" />
+		</Folding>
+	</File>
+	<File name="Archivos\DetalleCompraArchivo.h" open="1" top="0" tabpos="78" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="597" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\ProveedorMenu.cpp" open="1" top="0" tabpos="43" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="410" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="Managers\ClienteManager.h" open="1" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="482" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Archivos\CategoriaArchivo.cpp" open="1" top="0" tabpos="50" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3552" topLine="157" />
+		</Cursor>
+	</File>
+	<File name="Archivos\ProductoArchivo.cpp" open="1" top="0" tabpos="47" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3294" topLine="153" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="148" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Transaccion.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1832" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Cliente.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="326" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Managers\DetalleCompraManager.h" open="1" top="0" tabpos="75" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="633" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="Managers\AlmacenManager.cpp" open="1" top="0" tabpos="67" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="184" topLine="30" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
+			<Collapse line="14" />
+			<Collapse line="71" />
+			<Collapse line="91" />
+			<Collapse line="112" />
+			<Collapse line="140" />
+			<Collapse line="161" />
+			<Collapse line="181" />
+			<Collapse line="201" />
+			<Collapse line="219" />
+			<Collapse line="237" />
+			<Collapse line="252" />
+			<Collapse line="264" />
+			<Collapse line="342" />
+			<Collapse line="386" />
+			<Collapse line="415" />
+			<Collapse line="451" />
+			<Collapse line="487" />
+			<Collapse line="523" />
+			<Collapse line="559" />
+			<Collapse line="595" />
+			<Collapse line="632" />
+		</Folding>
+	</File>
+	<File name="Archivos\ProveedorArchivo.cpp" open="1" top="0" tabpos="41" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3337" topLine="155" />
+		</Cursor>
+	</File>
+	<File name="Managers\EmpleadoManager.h" open="1" top="0" tabpos="84" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="483" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="Utils.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="240" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Managers\BackupManager.h" open="1" top="0" tabpos="96" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1073" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Archivos\CompraArchivo.cpp" open="1" top="0" tabpos="77" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3469" topLine="166" />
+		</Cursor>
+	</File>
+	<File name="Managers\ComprasManager.h" open="1" top="0" tabpos="72" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="363" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\VentaMenu.h" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="261" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Transaccion.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="514" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="Entidades\DetalleTransaccion.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Managers\ComprasManager.cpp" open="1" top="0" tabpos="73" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1527" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\InformeMenu.cpp" open="1" top="0" tabpos="91" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="226" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="Entidades\Proveedor.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="469" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Archivos\EmpresaArchivo.h" open="1" top="0" tabpos="56" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="503" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Menus\BackupMenu.cpp" open="1" top="0" tabpos="95" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1084" topLine="14" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

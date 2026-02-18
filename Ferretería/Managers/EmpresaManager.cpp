@@ -151,7 +151,6 @@ void EmpresaManager::mostrarNombreComercialAZ() {
     Empresa *vEmpresa = new Empresa[cantidad];
     _repo.leerTodos(vEmpresa, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 
@@ -188,7 +187,6 @@ void EmpresaManager::mostrarNombreComercialZA(){
     Empresa *vEmpresa = new Empresa[cantidad];
     _repo.leerTodos(vEmpresa, cantidad);
 
-    // ORDENAMIENTO (Selection Sort sin desempate)
     for (int i = 0; i < cantidad - 1; i++) {
         int j_min = i;
 

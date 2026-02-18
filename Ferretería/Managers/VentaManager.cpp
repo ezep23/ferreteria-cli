@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../utils.h" // para cargar cadena (string)
+#include "../utils.h"
 
 #include "../Entidades/Cliente.h"
 #include "../Entidades/Transaccion.h"
@@ -405,15 +405,11 @@ void VentaManager::recaudacionAnual(){
 
     _repo.leerTodos(vVentas, cantidad);
 
-    // ---------------------------------------------------------
-    // PASO 1: ORDENAR (Burbujeo) - Descendente por Año
-    // Si puedes usar <algorithm>, std::sort es mejor.
-    // Aquí uso burbujeo manual por si no te permiten librerías extra.
-    // ---------------------------------------------------------
+    /// BURBUJA DESCENDENTE
     Transaccion aux;
     for(int i = 0; i < cantidad - 1; i++){
         for(int j = 0; j < cantidad - i - 1; j++){
-            // Si el año actual es MENOR al siguiente, los invertimos (p ara que quede Mayor -> Menor)
+            // swap
             if(vVentas[j].getFechaTransaccion().getAnio() < vVentas[j+1].getFechaTransaccion().getAnio()){
                 aux = vVentas[j];
                 vVentas[j] = vVentas[j+1];
@@ -422,10 +418,7 @@ void VentaManager::recaudacionAnual(){
         }
     }
 
-    // ---------------------------------------------------------
-    // PASO 2: CORTE DE CONTROL
-    // Recorremos el arreglo agrupando por año
-    // ---------------------------------------------------------
+    /// RECORRO ARREGLO AGRUPANDO POR AÑO
     int i = 0;
     while(i < cantidad){
 
@@ -438,7 +431,7 @@ void VentaManager::recaudacionAnual(){
                 recaudacionAnio += vVentas[i].getMontoTotal();
             }
 
-            i++; // Avanzamos al siguiente registro
+            i++;
         }
 
         cout << "AÑO: " << anioActual << endl;
@@ -651,7 +644,7 @@ void VentaManager::mostrarOrdenadasUltimaVenta(){
     _repo.leerTodos(vVenta, cantidad);
 
     for (int i = 0; i < cantidad - 1; i++) {
-        int j_max = i; // Ahora buscamos el mayor
+        int j_max = i;
 
         for (int j = i + 1; j < cantidad; j++) {
 
@@ -661,11 +654,10 @@ void VentaManager::mostrarOrdenadasUltimaVenta(){
             long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
             long fechaMax_num = f_max.getAnio() * 10000 + f_max.getMes() * 100 + f_max.getDia();
 
-            // CAMBIO CLAVE: Usamos > para que la fecha más nueva gane
             if (fechaJ_num > fechaMax_num) {
                 j_max = j;
             }
-            // Desempate por hora si las fechas son iguales
+
             else if (fechaJ_num == fechaMax_num) {
 
                 Hora h_j = vVenta[j].getHoraTransaccion();
@@ -674,14 +666,12 @@ void VentaManager::mostrarOrdenadasUltimaVenta(){
                 long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
                 long horaMax_num = h_max.getHora() * 100 + h_max.getMinutos();
 
-                // CAMBIO CLAVE: Usamos > para la hora también
                 if (horaJ_num > horaMax_num) {
                     j_max = j;
                 }
             }
         }
 
-        // Intercambio manual (Swap)
         if (j_max != i) {
             Transaccion temp = vVenta[i];
             vVenta[i] = vVenta[j_max];
@@ -714,25 +704,21 @@ void VentaManager::mostrarOrdenadasPrimeraVenta(){
 
         for (int j = i + 1; j < cantidad; j++) {
 
-            // 1. Extraemos las fechas de los objetos que estamos comparando
+
             Fecha f_j = vVenta[j].getFechaTransaccion();
             Fecha f_min = vVenta[j_min].getFechaTransaccion();
 
-            // 2. Aplicamos el truco matemático (AAAAMMDD)
+            /// SE SUMAN LAS ANIOS, MESES Y DIAS PARA FORMAR UN NUMERO
             long fechaJ_num = f_j.getAnio() * 10000 + f_j.getMes() * 100 + f_j.getDia();
             long fechaMin_num = f_min.getAnio() * 10000 + f_min.getMes() * 100 + f_min.getDia();
 
-            // Comparamos los enteros de las fechas
             if (fechaJ_num < fechaMin_num) {
                 j_min = j;
-            }
-            // 3. Solo si las fechas son exactamente iguales, desempatamos por la hora
-            else if (fechaJ_num == fechaMin_num) {
+            } else if (fechaJ_num == fechaMin_num) { /// SI LAS FECHAS SON IGUAL DESEMPATE POR D
 
                 Hora h_j = vVenta[j].getHoraTransaccion();
                 Hora h_min = vVenta[j_min].getHoraTransaccion();
 
-                // Aplicamos el mismo truco para la hora (HHMM)
                 long horaJ_num = h_j.getHora() * 100 + h_j.getMinutos();
                 long horaMin_num = h_min.getHora() * 100 + h_min.getMinutos();
 
@@ -742,7 +728,6 @@ void VentaManager::mostrarOrdenadasPrimeraVenta(){
             }
         }
 
-        // swap
         if (j_min != i) {
             Transaccion temp = vVenta[i];
             vVenta[i] = vVenta[j_min];
